@@ -36,7 +36,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    Image img = new ImageIcon(getClass().getResource(&quot;/image/background/login.png&quot;)).getImage();&#xa;    public void paintComponent(Graphics g) {//&#xadf8;&#xb9ac;&#xb294; &#xd568;&#xc218;&#xa;        g.drawImage(img, 0, 0, img.getWidth(null), img.getHeight(null), null);//background&#xb97c; &#xadf8;&#xb824;&#xc90c;&#xa;    }&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    Image img = new ImageIcon(getClass().getResource(&quot;/image/background/login_register.png&quot;)).getImage();&#xa;    public void paintComponent(Graphics g) {//&#xadf8;&#xb9ac;&#xb294; &#xd568;&#xc218;&#xa;        g.drawImage(img, 0, 0, img.getWidth(null), img.getHeight(null), null);//background&#xb97c; &#xadf8;&#xb824;&#xc90c;&#xa;    }&#xa;}"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -168,6 +168,16 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="490" y="190" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblCaptcha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jLabel1"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="490" y="350" width="200" height="40"/>
             </Constraint>
           </Constraints>
         </Component>

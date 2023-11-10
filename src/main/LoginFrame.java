@@ -3,14 +3,13 @@ package main;
 import java.awt.*;
 import javax.swing.*;
 import java.sql.SQLException;
-import nl.captcha.Captcha;
 
 public class LoginFrame extends javax.swing.JFrame {
    
     public LoginFrame() {
         initComponents();
-        Captcha.Builder captcha = new Captcha.Builder(200, 50);
-        captcha.addText().build();
+        JCaptcha jct = new JCaptcha();      
+        lblCaptcha.setIcon(new ImageIcon(jct.JCaptcha()));
     }
 
     @SuppressWarnings("unchecked")
@@ -18,7 +17,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         pnBackground = new javax.swing.JPanel(){
-            Image img = new ImageIcon(getClass().getResource("/image/background/login.png")).getImage();
+            Image img = new ImageIcon(getClass().getResource("/image/background/login_register.png")).getImage();
             public void paintComponent(Graphics g) {//그리는 함수
                 g.drawImage(img, 0, 0, img.getWidth(null), img.getHeight(null), null);//background를 그려줌
             }
@@ -28,6 +27,7 @@ public class LoginFrame extends javax.swing.JFrame {
         lblRegister = new javax.swing.JLabel();
         txtPW = new javax.swing.JPasswordField();
         lblLogin = new javax.swing.JLabel();
+        lblCaptcha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("로그인");
@@ -116,6 +116,9 @@ public class LoginFrame extends javax.swing.JFrame {
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
         lblLogin.setText("로그인");
         pnBackground.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
+
+        lblCaptcha.setText("jLabel1");
+        pnBackground.add(lblCaptcha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 200, 40));
 
         getContentPane().add(pnBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -241,6 +244,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel lblCaptcha;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JPanel pnBackground;

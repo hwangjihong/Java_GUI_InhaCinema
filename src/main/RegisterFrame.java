@@ -35,8 +35,8 @@ public class RegisterFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel(){
-            Image img = new ImageIcon(getClass().getResource("/image/background/login2.png")).getImage();
+        pnBackground = new javax.swing.JPanel(){
+            Image img = new ImageIcon(getClass().getResource("/image/background/login_register.png")).getImage();
             public void paintComponent(Graphics g) {//그리는 함수
                 g.drawImage(img, 0, 0, img.getWidth(null), img.getHeight(null), null);//background를 그려줌
             }
@@ -54,8 +54,8 @@ public class RegisterFrame extends javax.swing.JFrame {
         setLocation(new java.awt.Point(125, 30));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(1280, 720));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
+        pnBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNickName.setBackground(new java.awt.Color(67, 67, 67));
         txtNickName.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -83,7 +83,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                 txtNickNameKeyTyped(evt);
             }
         });
-        jPanel1.add(txtNickName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 300, 45));
+        pnBackground.add(txtNickName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 300, 45));
 
         btnRegister.setBackground(new java.awt.Color(40, 71, 192));
         btnRegister.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -95,7 +95,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 300, 45));
+        pnBackground.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 300, 45));
 
         lblLogin.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,12 +105,12 @@ public class RegisterFrame extends javax.swing.JFrame {
                 lblLoginMouseClicked(evt);
             }
         });
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, -1, -1));
+        pnBackground.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, -1, -1));
 
         lblRegister.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         lblRegister.setForeground(new java.awt.Color(255, 255, 255));
         lblRegister.setText("회원가입");
-        jPanel1.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
+        pnBackground.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
 
         txtPW.setBackground(new java.awt.Color(67, 67, 67));
         txtPW.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -137,7 +137,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                 txtPWKeyTyped(evt);
             }
         });
-        jPanel1.add(txtPW, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 300, 45));
+        pnBackground.add(txtPW, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 300, 45));
 
         txtID.setBackground(new java.awt.Color(67, 67, 67));
         txtID.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -163,7 +163,7 @@ public class RegisterFrame extends javax.swing.JFrame {
                 txtIDKeyTyped(evt);
             }
         });
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 300, 45));
+        pnBackground.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 300, 45));
 
         txtPWCheck.setBackground(new java.awt.Color(67, 67, 67));
         txtPWCheck.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -190,9 +190,9 @@ public class RegisterFrame extends javax.swing.JFrame {
                 txtPWCheckKeyTyped(evt);
             }
         });
-        jPanel1.add(txtPWCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 300, 45));
+        pnBackground.add(txtPWCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 300, 45));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        getContentPane().add(pnBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -382,9 +382,9 @@ public class RegisterFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegister;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblRegister;
+    private javax.swing.JPanel pnBackground;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNickName;
     private javax.swing.JPasswordField txtPW;
