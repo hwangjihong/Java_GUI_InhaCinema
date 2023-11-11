@@ -1,14 +1,20 @@
 package main;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 import java.sql.SQLException;
 
 public class LoginFrame extends javax.swing.JFrame {
-   
+    JCaptcha jct = new JCaptcha();
+    
     public LoginFrame() {
         initComponents();
-        JCaptcha jct = new JCaptcha();      
+        initCaptcha();
+    }
+    
+    // 캡챠 이미지 생성
+    private void initCaptcha(){
         lblCaptcha.setIcon(new ImageIcon(jct.JCaptcha()));
     }
 
@@ -28,6 +34,9 @@ public class LoginFrame extends javax.swing.JFrame {
         txtPW = new javax.swing.JPasswordField();
         lblLogin = new javax.swing.JLabel();
         lblCaptcha = new javax.swing.JLabel();
+        btnCaptchaAudio = new javax.swing.JButton();
+        btnCaptchaRefresh = new javax.swing.JButton();
+        txtCaptchaAnswer = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("로그인");
@@ -73,7 +82,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        pnBackground.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 300, 45));
+        pnBackground.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, 300, 45));
 
         lblRegister.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
         lblRegister.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,7 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 lblRegisterMouseClicked(evt);
             }
         });
-        pnBackground.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, 56, -1));
+        pnBackground.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 470, 56, -1));
 
         txtPW.setBackground(new java.awt.Color(67, 67, 67));
         txtPW.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
@@ -116,9 +125,48 @@ public class LoginFrame extends javax.swing.JFrame {
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
         lblLogin.setText("로그인");
         pnBackground.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
+        pnBackground.add(lblCaptcha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 250, 45));
 
-        lblCaptcha.setText("jLabel1");
-        pnBackground.add(lblCaptcha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 200, 40));
+        btnCaptchaAudio.setText("🔊");
+        btnCaptchaAudio.setBorder(null);
+        btnCaptchaAudio.setFocusable(false);
+        pnBackground.add(btnCaptchaAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 373, 40, 25));
+
+        btnCaptchaRefresh.setText("🔄");
+        btnCaptchaRefresh.setBorder(null);
+        btnCaptchaRefresh.setFocusable(false);
+        btnCaptchaRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCaptchaRefreshActionPerformed(evt);
+            }
+        });
+        pnBackground.add(btnCaptchaRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 347, 40, 25));
+
+        txtCaptchaAnswer.setBackground(new java.awt.Color(67, 67, 67));
+        txtCaptchaAnswer.setFont(new java.awt.Font("맑은 고딕", 0, 14)); // NOI18N
+        txtCaptchaAnswer.setForeground(new java.awt.Color(153, 153, 153));
+        txtCaptchaAnswer.setText("자동완성 방지문자");
+        txtCaptchaAnswer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCaptchaAnswer.setFocusable(false);
+        txtCaptchaAnswer.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCaptchaAnswerFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCaptchaAnswerFocusLost(evt);
+            }
+        });
+        txtCaptchaAnswer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCaptchaAnswerMouseClicked(evt);
+            }
+        });
+        txtCaptchaAnswer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCaptchaAnswerKeyTyped(evt);
+            }
+        });
+        pnBackground.add(txtCaptchaAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 300, 45));
 
         getContentPane().add(pnBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -152,11 +200,17 @@ public class LoginFrame extends javax.swing.JFrame {
         // 로그인 버튼 클릭 시
         String id = txtID.getText();
         String pw = txtPW.getText();
+        String ct = txtCaptchaAnswer.getText();
         System.out.println(pw);
-        if(id.equals("아이디") && id.length() == 0){
+        if(id.equals("아이디") || id.length() == 0){
             JOptionPane.showMessageDialog(null, "아이디를 입력해주세요.");
-        } else if(pw.equals("비밀번호") && pw.length() == 0){
+        } else if(pw.equals("비밀번호") || pw.length() == 0){
             JOptionPane.showMessageDialog(null, "비밀번호를 입력해주세요.");
+        } else if(ct.equals("자동완성 방지문자") || ct.length() == 0){
+            JOptionPane.showMessageDialog(null, "자동완성 방지문자를 입력해주세요.");
+        } else if(!jct.captchaAnswer(ct)){
+            JOptionPane.showMessageDialog(null, "자동완성 방지문자가 틀렸습니다.\n다시 입력해주세요.");
+            initCaptcha();
         }else{
             DB db = new DB();
             String sql = "SELECT count(*)FROM users WHERE id = ? and pw = md5(?)";
@@ -206,6 +260,32 @@ public class LoginFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtPWFocusLost
 
+    private void btnCaptchaRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaptchaRefreshActionPerformed
+        // 캡챠 이미지 새로고침 버튼
+        initCaptcha();
+    }//GEN-LAST:event_btnCaptchaRefreshActionPerformed
+
+    private void txtCaptchaAnswerFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCaptchaAnswerFocusLost
+       // txtCaptchaAnswer 텍스트 필드가 포커스가 풀릴 시
+        if(txtCaptchaAnswer.getText().length() == 0) txtCaptchaAnswer.setText("자동완성 방지문자");
+    }//GEN-LAST:event_txtCaptchaAnswerFocusLost
+
+    private void txtCaptchaAnswerFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCaptchaAnswerFocusGained
+        // txtCaptchaAnswer 텍스트 필드가 포커스 될 시
+        if(txtCaptchaAnswer.getText().equals("자동완성 방지문자")) txtCaptchaAnswer.setText(null);
+    }//GEN-LAST:event_txtCaptchaAnswerFocusGained
+
+    private void txtCaptchaAnswerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCaptchaAnswerMouseClicked
+        // txtCaptchaAnswer 텍스트 필드 클릭 시
+        txtCaptchaAnswer.setFocusable(true);
+        txtCaptchaAnswer.requestFocus();
+    }//GEN-LAST:event_txtCaptchaAnswerMouseClicked
+
+    private void txtCaptchaAnswerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCaptchaAnswerKeyTyped
+        // txtCaptchaAnswer 텍스트 필드에 키가 입력될 시
+        if(txtCaptchaAnswer.getText().length() > 4) evt.consume();
+    }//GEN-LAST:event_txtCaptchaAnswerKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -243,11 +323,14 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCaptchaAudio;
+    private javax.swing.JButton btnCaptchaRefresh;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel lblCaptcha;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JPanel pnBackground;
+    private javax.swing.JTextField txtCaptchaAnswer;
     private javax.swing.JTextField txtID;
     private javax.swing.JPasswordField txtPW;
     // End of variables declaration//GEN-END:variables
