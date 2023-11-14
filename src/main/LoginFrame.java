@@ -1,9 +1,10 @@
 package main;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginFrame extends javax.swing.JFrame {
     JCaptcha jct = new JCaptcha();
@@ -317,6 +318,11 @@ public class LoginFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                try{
+                    Thread.sleep(3500);
+                } catch(InterruptedException e){
+                    Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, e);
+                }
                 new LoginFrame().setVisible(true);
             }
         });
