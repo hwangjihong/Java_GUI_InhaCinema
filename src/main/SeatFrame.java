@@ -19,80 +19,7 @@ public class SeatFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        btn_9 = new javax.swing.JButton();
-        btn_8 = new javax.swing.JButton();
-        btn_7 = new javax.swing.JButton();
-        btn_19 = new javax.swing.JButton();
-        btn_18 = new javax.swing.JButton();
-        btn_17 = new javax.swing.JButton();
-        btn_16 = new javax.swing.JButton();
-        btn_15 = new javax.swing.JButton();
-        btn_14 = new javax.swing.JButton();
-        btn_13 = new javax.swing.JButton();
-        btn_12 = new javax.swing.JButton();
-        btn_11 = new javax.swing.JButton();
-        btn_10 = new javax.swing.JButton();
-        btn_20 = new javax.swing.JButton();
-        btn_21 = new javax.swing.JButton();
-        btn_22 = new javax.swing.JButton();
-        btn_23 = new javax.swing.JButton();
-        btn_24 = new javax.swing.JButton();
-        btn_25 = new javax.swing.JButton();
-        btn_26 = new javax.swing.JButton();
-        btn_27 = new javax.swing.JButton();
-        btn_28 = new javax.swing.JButton();
-        btn_29 = new javax.swing.JButton();
-        btn_30 = new javax.swing.JButton();
-        btn_31 = new javax.swing.JButton();
-        btn_32 = new javax.swing.JButton();
-        btn_33 = new javax.swing.JButton();
-        btn_34 = new javax.swing.JButton();
-        btn_35 = new javax.swing.JButton();
-        btn_36 = new javax.swing.JButton();
-        btn_37 = new javax.swing.JButton();
-        btn_38 = new javax.swing.JButton();
-        btn_39 = new javax.swing.JButton();
-        btn_40 = new javax.swing.JButton();
-        btn_41 = new javax.swing.JButton();
-        btn_42 = new javax.swing.JButton();
-        btn_43 = new javax.swing.JButton();
-        btn_44 = new javax.swing.JButton();
-        btn_45 = new javax.swing.JButton();
-        btn_46 = new javax.swing.JButton();
-        btn_47 = new javax.swing.JButton();
-        btn_48 = new javax.swing.JButton();
-        btn_49 = new javax.swing.JButton();
-        btn_50 = new javax.swing.JButton();
-        btn_51 = new javax.swing.JButton();
-        btn_52 = new javax.swing.JButton();
-        btn_53 = new javax.swing.JButton();
-        btn_54 = new javax.swing.JButton();
-        btn_55 = new javax.swing.JButton();
-        btn_56 = new javax.swing.JButton();
-        btn_57 = new javax.swing.JButton();
-        btn_58 = new javax.swing.JButton();
-        btn_59 = new javax.swing.JButton();
-        btn_60 = new javax.swing.JButton();
-        btn_61 = new javax.swing.JButton();
-        btn_62 = new javax.swing.JButton();
-        btn_63 = new javax.swing.JButton();
-        btn_64 = new javax.swing.JButton();
-        btn_65 = new javax.swing.JButton();
-        btn_66 = new javax.swing.JButton();
-        btn_67 = new javax.swing.JButton();
-        btn_68 = new javax.swing.JButton();
-        btn_69 = new javax.swing.JButton();
-        btn_70 = new javax.swing.JButton();
-        btn_71 = new javax.swing.JButton();
-        btn_72 = new javax.swing.JButton();
         btn_select = new javax.swing.JButton();
-        btn_74 = new javax.swing.JButton();
-        btn_75 = new javax.swing.JButton();
-        btn_76 = new javax.swing.JButton();
-        btn_77 = new javax.swing.JButton();
-        btn_78 = new javax.swing.JButton();
-        btn_79 = new javax.swing.JButton();
-        btn_80 = new javax.swing.JButton();
         btn_select1 = new javax.swing.JButton();
         tgbtn10 = new javax.swing.JToggleButton();
         tgbtn11 = new javax.swing.JToggleButton();
@@ -102,6 +29,79 @@ public class SeatFrame extends javax.swing.JFrame {
         tgbtn14 = new javax.swing.JToggleButton();
         tgbtn15 = new javax.swing.JToggleButton();
         tgbtn16 = new javax.swing.JToggleButton();
+        tgbtn19 = new javax.swing.JToggleButton();
+        tgbtn18 = new javax.swing.JToggleButton();
+        tgbtn17 = new javax.swing.JToggleButton();
+        tgbtn20 = new javax.swing.JToggleButton();
+        tgbtn21 = new javax.swing.JToggleButton();
+        tgbtn22 = new javax.swing.JToggleButton();
+        tgbtn23 = new javax.swing.JToggleButton();
+        tgbtn24 = new javax.swing.JToggleButton();
+        tgbtn25 = new javax.swing.JToggleButton();
+        tgbtn26 = new javax.swing.JToggleButton();
+        tgbtn27 = new javax.swing.JToggleButton();
+        tgbtn28 = new javax.swing.JToggleButton();
+        tgbtn29 = new javax.swing.JToggleButton();
+        tgbtn30 = new javax.swing.JToggleButton();
+        tgbtn31 = new javax.swing.JToggleButton();
+        tgbtn32 = new javax.swing.JToggleButton();
+        tgbtn33 = new javax.swing.JToggleButton();
+        tgbtn34 = new javax.swing.JToggleButton();
+        tgbtn35 = new javax.swing.JToggleButton();
+        tgbtn36 = new javax.swing.JToggleButton();
+        tgbtn37 = new javax.swing.JToggleButton();
+        tgbtn38 = new javax.swing.JToggleButton();
+        tgbtn39 = new javax.swing.JToggleButton();
+        tgbtn40 = new javax.swing.JToggleButton();
+        tgbtn41 = new javax.swing.JToggleButton();
+        tgbtn42 = new javax.swing.JToggleButton();
+        tgbtn43 = new javax.swing.JToggleButton();
+        tgbtn44 = new javax.swing.JToggleButton();
+        tgbtn45 = new javax.swing.JToggleButton();
+        tgbtn46 = new javax.swing.JToggleButton();
+        tgbtn47 = new javax.swing.JToggleButton();
+        tgbtn48 = new javax.swing.JToggleButton();
+        tgbtn49 = new javax.swing.JToggleButton();
+        tgbtn50 = new javax.swing.JToggleButton();
+        tgbtn51 = new javax.swing.JToggleButton();
+        tgbtn52 = new javax.swing.JToggleButton();
+        tgbtn53 = new javax.swing.JToggleButton();
+        tgbtn54 = new javax.swing.JToggleButton();
+        tgbtn55 = new javax.swing.JToggleButton();
+        tgbtn56 = new javax.swing.JToggleButton();
+        tgbtn57 = new javax.swing.JToggleButton();
+        tgbtn58 = new javax.swing.JToggleButton();
+        tgbtn59 = new javax.swing.JToggleButton();
+        tgbtn60 = new javax.swing.JToggleButton();
+        tgbtn61 = new javax.swing.JToggleButton();
+        tgbtn62 = new javax.swing.JToggleButton();
+        tgbtn63 = new javax.swing.JToggleButton();
+        tgbtn64 = new javax.swing.JToggleButton();
+        tgbtn65 = new javax.swing.JToggleButton();
+        tgbtn66 = new javax.swing.JToggleButton();
+        tgbtn67 = new javax.swing.JToggleButton();
+        tgbtn68 = new javax.swing.JToggleButton();
+        tgbtn69 = new javax.swing.JToggleButton();
+        tgbtn70 = new javax.swing.JToggleButton();
+        tgbtn71 = new javax.swing.JToggleButton();
+        tgbtn72 = new javax.swing.JToggleButton();
+        tgbtn73 = new javax.swing.JToggleButton();
+        tgbtn74 = new javax.swing.JToggleButton();
+        tgbtn75 = new javax.swing.JToggleButton();
+        tgbtn76 = new javax.swing.JToggleButton();
+        tgbtn77 = new javax.swing.JToggleButton();
+        tgbtn78 = new javax.swing.JToggleButton();
+        tgbtn79 = new javax.swing.JToggleButton();
+        tgbtn80 = new javax.swing.JToggleButton();
+        tgbtn81 = new javax.swing.JToggleButton();
+        tgbtn82 = new javax.swing.JToggleButton();
+        tgbtn83 = new javax.swing.JToggleButton();
+        tgbtn84 = new javax.swing.JToggleButton();
+        tgbtn85 = new javax.swing.JToggleButton();
+        tgbtn86 = new javax.swing.JToggleButton();
+        tgbtn87 = new javax.swing.JToggleButton();
+        tgbtn88 = new javax.swing.JToggleButton();
+        tgbtn89 = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,380 +141,10 @@ public class SeatFrame extends javax.swing.JFrame {
             jButton5.setFocusable(false);
             getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 300, 45));
 
-            btn_9.setText("A9");
-            btn_9.setBorder(null);
-            btn_9.setFocusable(false);
-            getContentPane().add(btn_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 175, 40, 40));
-
-            btn_8.setText("A8");
-            btn_8.setBorder(null);
-            btn_8.setFocusable(false);
-            getContentPane().add(btn_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 175, 40, 40));
-
-            btn_7.setText("A7");
-            btn_7.setBorder(null);
-            btn_7.setFocusable(false);
-            getContentPane().add(btn_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 175, 40, 40));
-
-            btn_19.setText("B9");
-            btn_19.setBorder(null);
-            btn_19.setFocusable(false);
-            getContentPane().add(btn_19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 230, 40, 40));
-
-            btn_18.setText("B8");
-            btn_18.setBorder(null);
-            btn_18.setFocusable(false);
-            getContentPane().add(btn_18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, 40, 40));
-
-            btn_17.setText("B7");
-            btn_17.setBorder(null);
-            btn_17.setFocusable(false);
-            getContentPane().add(btn_17, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 230, 40, 40));
-
-            btn_16.setText("B6");
-            btn_16.setBorder(null);
-            btn_16.setFocusable(false);
-            getContentPane().add(btn_16, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 230, 40, 40));
-
-            btn_15.setText("B5");
-            btn_15.setBorder(null);
-            btn_15.setFocusable(false);
-            getContentPane().add(btn_15, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 230, 40, 40));
-
-            btn_14.setText("B4");
-            btn_14.setBorder(null);
-            btn_14.setFocusable(false);
-            getContentPane().add(btn_14, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 230, 40, 40));
-
-            btn_13.setText("B3");
-            btn_13.setBorder(null);
-            btn_13.setFocusable(false);
-            getContentPane().add(btn_13, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 230, 40, 40));
-
-            btn_12.setText("B2");
-            btn_12.setBorder(null);
-            btn_12.setFocusable(false);
-            getContentPane().add(btn_12, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 40, 40));
-
-            btn_11.setText("B1");
-            btn_11.setBorder(null);
-            btn_11.setFocusable(false);
-            getContentPane().add(btn_11, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 40, 40));
-
-            btn_10.setText("B0");
-            btn_10.setBorder(null);
-            btn_10.setFocusable(false);
-            getContentPane().add(btn_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 40, 40));
-
-            btn_20.setText("C0");
-            btn_20.setBorder(null);
-            btn_20.setFocusable(false);
-            getContentPane().add(btn_20, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 40, 40));
-
-            btn_21.setText("C1");
-            btn_21.setBorder(null);
-            btn_21.setFocusable(false);
-            getContentPane().add(btn_21, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 40, 40));
-
-            btn_22.setText("C2");
-            btn_22.setBorder(null);
-            btn_22.setFocusable(false);
-            getContentPane().add(btn_22, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 40, 40));
-
-            btn_23.setText("C3");
-            btn_23.setBorder(null);
-            btn_23.setFocusable(false);
-            getContentPane().add(btn_23, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 280, 40, 40));
-
-            btn_24.setText("C5");
-            btn_24.setBorder(null);
-            btn_24.setFocusable(false);
-            getContentPane().add(btn_24, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 280, 40, 40));
-
-            btn_25.setText("C4");
-            btn_25.setBorder(null);
-            btn_25.setFocusable(false);
-            getContentPane().add(btn_25, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 280, 40, 40));
-
-            btn_26.setText("C6");
-            btn_26.setBorder(null);
-            btn_26.setFocusable(false);
-            getContentPane().add(btn_26, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 280, 40, 40));
-
-            btn_27.setText("C7");
-            btn_27.setBorder(null);
-            btn_27.setFocusable(false);
-            getContentPane().add(btn_27, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 280, 40, 40));
-
-            btn_28.setText("C7");
-            btn_28.setBorder(null);
-            btn_28.setFocusable(false);
-            getContentPane().add(btn_28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 280, 40, 40));
-
-            btn_29.setText("C9");
-            btn_29.setBorder(null);
-            btn_29.setFocusable(false);
-            getContentPane().add(btn_29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 280, 40, 40));
-
-            btn_30.setText("D0");
-            btn_30.setBorder(null);
-            btn_30.setFocusable(false);
-            getContentPane().add(btn_30, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 40, 40));
-
-            btn_31.setText("D1");
-            btn_31.setBorder(null);
-            btn_31.setFocusable(false);
-            getContentPane().add(btn_31, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 40, 40));
-
-            btn_32.setText("D2");
-            btn_32.setBorder(null);
-            btn_32.setFocusable(false);
-            getContentPane().add(btn_32, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, 40, 40));
-
-            btn_33.setText("D3");
-            btn_33.setBorder(null);
-            btn_33.setFocusable(false);
-            getContentPane().add(btn_33, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 330, 40, 40));
-
-            btn_34.setText("D4");
-            btn_34.setBorder(null);
-            btn_34.setFocusable(false);
-            getContentPane().add(btn_34, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 330, 40, 40));
-
-            btn_35.setText("D5");
-            btn_35.setBorder(null);
-            btn_35.setFocusable(false);
-            getContentPane().add(btn_35, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 330, 40, 40));
-
-            btn_36.setText("D6");
-            btn_36.setBorder(null);
-            btn_36.setFocusable(false);
-            getContentPane().add(btn_36, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 330, 40, 40));
-
-            btn_37.setText("D7");
-            btn_37.setBorder(null);
-            btn_37.setFocusable(false);
-            getContentPane().add(btn_37, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 330, 40, 40));
-
-            btn_38.setText("D8");
-            btn_38.setBorder(null);
-            btn_38.setFocusable(false);
-            getContentPane().add(btn_38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 330, 40, 40));
-
-            btn_39.setText("D9");
-            btn_39.setBorder(null);
-            btn_39.setFocusable(false);
-            getContentPane().add(btn_39, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 330, 40, 40));
-
-            btn_40.setText("E2");
-            btn_40.setBorder(null);
-            btn_40.setFocusable(false);
-            getContentPane().add(btn_40, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 390, 40, 40));
-
-            btn_41.setText("E0");
-            btn_41.setBorder(null);
-            btn_41.setFocusable(false);
-            getContentPane().add(btn_41, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 40, 40));
-
-            btn_42.setText("E6");
-            btn_42.setBorder(null);
-            btn_42.setFocusable(false);
-            getContentPane().add(btn_42, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 390, 40, 40));
-
-            btn_43.setText("E3");
-            btn_43.setBorder(null);
-            btn_43.setFocusable(false);
-            getContentPane().add(btn_43, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 390, 40, 40));
-
-            btn_44.setText("E4");
-            btn_44.setBorder(null);
-            btn_44.setFocusable(false);
-            getContentPane().add(btn_44, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 390, 40, 40));
-
-            btn_45.setText("E1");
-            btn_45.setBorder(null);
-            btn_45.setFocusable(false);
-            getContentPane().add(btn_45, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 40, 40));
-
-            btn_46.setText("E5");
-            btn_46.setBorder(null);
-            btn_46.setFocusable(false);
-            getContentPane().add(btn_46, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 390, 40, 40));
-
-            btn_47.setText("E9");
-            btn_47.setBorder(null);
-            btn_47.setFocusable(false);
-            btn_47.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    btn_47ActionPerformed(evt);
-                }
-            });
-            getContentPane().add(btn_47, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 390, 40, 40));
-
-            btn_48.setText("E8");
-            btn_48.setBorder(null);
-            btn_48.setFocusable(false);
-            getContentPane().add(btn_48, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 390, 40, 40));
-
-            btn_49.setText("E7");
-            btn_49.setBorder(null);
-            btn_49.setFocusable(false);
-            getContentPane().add(btn_49, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 390, 40, 40));
-
-            btn_50.setText("F9");
-            btn_50.setBorder(null);
-            btn_50.setFocusable(false);
-            getContentPane().add(btn_50, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 440, 40, 40));
-
-            btn_51.setText("F8");
-            btn_51.setBorder(null);
-            btn_51.setFocusable(false);
-            getContentPane().add(btn_51, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 440, 40, 40));
-
-            btn_52.setText("F7");
-            btn_52.setBorder(null);
-            btn_52.setFocusable(false);
-            getContentPane().add(btn_52, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 440, 40, 40));
-
-            btn_53.setText("F6");
-            btn_53.setBorder(null);
-            btn_53.setFocusable(false);
-            getContentPane().add(btn_53, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 440, 40, 40));
-
-            btn_54.setText("F5");
-            btn_54.setBorder(null);
-            btn_54.setFocusable(false);
-            getContentPane().add(btn_54, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 440, 40, 40));
-
-            btn_55.setText("F4");
-            btn_55.setBorder(null);
-            btn_55.setFocusable(false);
-            getContentPane().add(btn_55, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 440, 40, 40));
-
-            btn_56.setText("F3");
-            btn_56.setBorder(null);
-            btn_56.setFocusable(false);
-            getContentPane().add(btn_56, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 440, 40, 40));
-
-            btn_57.setText("F2");
-            btn_57.setBorder(null);
-            btn_57.setFocusable(false);
-            getContentPane().add(btn_57, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 40, 40));
-
-            btn_58.setText("F1");
-            btn_58.setBorder(null);
-            btn_58.setFocusable(false);
-            getContentPane().add(btn_58, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, 40, 40));
-
-            btn_59.setText("F0");
-            btn_59.setBorder(null);
-            btn_59.setFocusable(false);
-            getContentPane().add(btn_59, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 40, 40));
-
-            btn_60.setText("G0");
-            btn_60.setBorder(null);
-            btn_60.setFocusable(false);
-            getContentPane().add(btn_60, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 40, 40));
-
-            btn_61.setText("G1");
-            btn_61.setBorder(null);
-            btn_61.setFocusable(false);
-            getContentPane().add(btn_61, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 40, 40));
-
-            btn_62.setText("G2");
-            btn_62.setBorder(null);
-            btn_62.setFocusable(false);
-            getContentPane().add(btn_62, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 40, 40));
-
-            btn_63.setText("G3");
-            btn_63.setBorder(null);
-            btn_63.setFocusable(false);
-            getContentPane().add(btn_63, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 490, 40, 40));
-
-            btn_64.setText("G5");
-            btn_64.setBorder(null);
-            btn_64.setFocusable(false);
-            getContentPane().add(btn_64, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 490, 40, 40));
-
-            btn_65.setText("G4");
-            btn_65.setBorder(null);
-            btn_65.setFocusable(false);
-            getContentPane().add(btn_65, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 490, 40, 40));
-
-            btn_66.setText("G6");
-            btn_66.setBorder(null);
-            btn_66.setFocusable(false);
-            getContentPane().add(btn_66, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 490, 40, 40));
-
-            btn_67.setText("G7");
-            btn_67.setBorder(null);
-            btn_67.setFocusable(false);
-            getContentPane().add(btn_67, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 490, 40, 40));
-
-            btn_68.setText("G8");
-            btn_68.setBorder(null);
-            btn_68.setFocusable(false);
-            getContentPane().add(btn_68, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 490, 40, 40));
-
-            btn_69.setText("G9");
-            btn_69.setBorder(null);
-            btn_69.setFocusable(false);
-            getContentPane().add(btn_69, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 490, 40, 40));
-
-            btn_70.setText("H0");
-            btn_70.setBorder(null);
-            btn_70.setFocusable(false);
-            getContentPane().add(btn_70, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 540, 40, 40));
-
-            btn_71.setText("H1");
-            btn_71.setBorder(null);
-            btn_71.setFocusable(false);
-            getContentPane().add(btn_71, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 40, 40));
-
-            btn_72.setText("H2");
-            btn_72.setBorder(null);
-            btn_72.setFocusable(false);
-            getContentPane().add(btn_72, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 540, 40, 40));
-
             btn_select.setBackground(new java.awt.Color(67, 67, 67));
             btn_select.setBorder(null);
             btn_select.setFocusable(false);
             getContentPane().add(btn_select, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 640, 40, 40));
-
-            btn_74.setText("H4");
-            btn_74.setBorder(null);
-            btn_74.setFocusable(false);
-            getContentPane().add(btn_74, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 540, 40, 40));
-
-            btn_75.setText("H5");
-            btn_75.setBorder(null);
-            btn_75.setFocusable(false);
-            getContentPane().add(btn_75, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 540, 40, 40));
-
-            btn_76.setText("H6");
-            btn_76.setBorder(null);
-            btn_76.setFocusable(false);
-            getContentPane().add(btn_76, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 540, 40, 40));
-
-            btn_77.setText("H7");
-            btn_77.setBorder(null);
-            btn_77.setFocusable(false);
-            getContentPane().add(btn_77, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 540, 40, 40));
-
-            btn_78.setText("H8");
-            btn_78.setBorder(null);
-            btn_78.setFocusable(false);
-            getContentPane().add(btn_78, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 540, 40, 40));
-
-            btn_79.setText("H9");
-            btn_79.setBorder(null);
-            btn_79.setFocusable(false);
-            getContentPane().add(btn_79, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 540, 40, 40));
-
-            btn_80.setText("H3");
-            btn_80.setBorder(null);
-            btn_80.setFocusable(false);
-            getContentPane().add(btn_80, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 540, 40, 40));
 
             btn_select1.setBackground(new java.awt.Color(40, 71, 192));
             btn_select1.setBorder(null);
@@ -581,15 +211,522 @@ public class SeatFrame extends javax.swing.JFrame {
             tgbtn16.setPreferredSize(new java.awt.Dimension(40, 40));
             getContentPane().add(tgbtn16, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 175, 40, 40));
 
+            tgbtn19.setText("A9");
+            tgbtn19.setBorder(null);
+            tgbtn19.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn19.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn19.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 175, 40, 40));
+
+            tgbtn18.setText("A8");
+            tgbtn18.setBorder(null);
+            tgbtn18.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn18.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn18.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 175, 40, 40));
+
+            tgbtn17.setText("A7");
+            tgbtn17.setBorder(null);
+            tgbtn17.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn17.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn17.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn17, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 175, 40, 40));
+
+            tgbtn20.setText("B0");
+            tgbtn20.setBorder(null);
+            tgbtn20.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn20.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn20.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn20, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 227, 40, 40));
+
+            tgbtn21.setText("B1");
+            tgbtn21.setBorder(null);
+            tgbtn21.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn21.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn21.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn21, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 227, 40, 40));
+
+            tgbtn22.setText("B2");
+            tgbtn22.setBorder(null);
+            tgbtn22.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn22.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn22.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn22, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 227, 40, 40));
+
+            tgbtn23.setText("B3");
+            tgbtn23.setBorder(null);
+            tgbtn23.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn23.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn23.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn23, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 227, 40, 40));
+
+            tgbtn24.setText("B4");
+            tgbtn24.setBorder(null);
+            tgbtn24.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn24.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn24.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn24, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 227, 40, 40));
+
+            tgbtn25.setText("B5");
+            tgbtn25.setBorder(null);
+            tgbtn25.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn25.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn25.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn25, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 227, 40, 40));
+
+            tgbtn26.setText("B6");
+            tgbtn26.setBorder(null);
+            tgbtn26.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn26.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn26.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn26, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 227, 40, 40));
+
+            tgbtn27.setText("B7");
+            tgbtn27.setBorder(null);
+            tgbtn27.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn27.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn27.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn27, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 227, 40, 40));
+
+            tgbtn28.setText("B8");
+            tgbtn28.setBorder(null);
+            tgbtn28.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn28.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn28.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn28, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 227, 40, 40));
+
+            tgbtn29.setText("B9");
+            tgbtn29.setBorder(null);
+            tgbtn29.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn29.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn29.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 227, 40, 40));
+
+            tgbtn30.setText("C0");
+            tgbtn30.setBorder(null);
+            tgbtn30.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn30.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn30.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn30, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 279, 40, 40));
+
+            tgbtn31.setText("C1");
+            tgbtn31.setBorder(null);
+            tgbtn31.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn31.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn31.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn31, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 279, 40, 40));
+
+            tgbtn32.setText("C2");
+            tgbtn32.setBorder(null);
+            tgbtn32.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn32.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn32.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn32, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 279, 40, 40));
+
+            tgbtn33.setText("C3");
+            tgbtn33.setBorder(null);
+            tgbtn33.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn33.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn33.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn33, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 279, 40, 40));
+
+            tgbtn34.setText("C4");
+            tgbtn34.setBorder(null);
+            tgbtn34.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn34.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn34.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn34, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 279, 40, 40));
+
+            tgbtn35.setText("C5");
+            tgbtn35.setBorder(null);
+            tgbtn35.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn35.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn35.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn35, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 279, 40, 40));
+
+            tgbtn36.setText("C6");
+            tgbtn36.setBorder(null);
+            tgbtn36.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn36.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn36.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn36, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 279, 40, 40));
+
+            tgbtn37.setText("C9");
+            tgbtn37.setBorder(null);
+            tgbtn37.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn37.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn37.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn37, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 279, 40, 40));
+
+            tgbtn38.setText("C8");
+            tgbtn38.setBorder(null);
+            tgbtn38.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn38.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn38.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 279, 40, 40));
+
+            tgbtn39.setText("C7");
+            tgbtn39.setBorder(null);
+            tgbtn39.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn39.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn39.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn39, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 279, 40, 40));
+
+            tgbtn40.setText("D0");
+            tgbtn40.setBorder(null);
+            tgbtn40.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn40.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn40.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn40, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 331, 40, 40));
+
+            tgbtn41.setText("D1");
+            tgbtn41.setBorder(null);
+            tgbtn41.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn41.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn41.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn41, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 331, 40, 40));
+
+            tgbtn42.setText("D2");
+            tgbtn42.setBorder(null);
+            tgbtn42.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn42.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn42.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn42, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 331, 40, 40));
+
+            tgbtn43.setText("D3");
+            tgbtn43.setBorder(null);
+            tgbtn43.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn43.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn43.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn43, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 331, 40, 40));
+
+            tgbtn44.setText("D4");
+            tgbtn44.setBorder(null);
+            tgbtn44.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn44.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn44.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn44, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 331, 40, 40));
+
+            tgbtn45.setText("D5");
+            tgbtn45.setBorder(null);
+            tgbtn45.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn45.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn45.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn45, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 331, 40, 40));
+
+            tgbtn46.setText("D6");
+            tgbtn46.setBorder(null);
+            tgbtn46.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn46.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn46.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn46, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 331, 40, 40));
+
+            tgbtn47.setText("D7");
+            tgbtn47.setBorder(null);
+            tgbtn47.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn47.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn47.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn47, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 331, 40, 40));
+
+            tgbtn48.setText("D8");
+            tgbtn48.setBorder(null);
+            tgbtn48.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn48.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn48.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn48, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 331, 40, 40));
+
+            tgbtn49.setText("D9");
+            tgbtn49.setBorder(null);
+            tgbtn49.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn49.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn49.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn49, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 331, 40, 40));
+
+            tgbtn50.setText("E0");
+            tgbtn50.setBorder(null);
+            tgbtn50.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn50.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn50.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn50, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 383, 40, 40));
+
+            tgbtn51.setText("E1");
+            tgbtn51.setBorder(null);
+            tgbtn51.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn51.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn51.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn51, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 383, 40, 40));
+
+            tgbtn52.setText("E2");
+            tgbtn52.setBorder(null);
+            tgbtn52.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn52.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn52.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn52, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 383, 40, 40));
+
+            tgbtn53.setText("E3");
+            tgbtn53.setBorder(null);
+            tgbtn53.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn53.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn53.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn53, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 383, 40, 40));
+
+            tgbtn54.setText("E4");
+            tgbtn54.setBorder(null);
+            tgbtn54.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn54.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn54.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn54, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 383, 40, 40));
+
+            tgbtn55.setText("E5");
+            tgbtn55.setBorder(null);
+            tgbtn55.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn55.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn55.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn55, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 383, 40, 40));
+
+            tgbtn56.setText("E6");
+            tgbtn56.setBorder(null);
+            tgbtn56.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn56.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn56.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn56, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 383, 40, 40));
+
+            tgbtn57.setText("E9");
+            tgbtn57.setBorder(null);
+            tgbtn57.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn57.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn57.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn57, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 383, 40, 40));
+
+            tgbtn58.setText("E8");
+            tgbtn58.setBorder(null);
+            tgbtn58.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn58.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn58.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn58, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 383, 40, 40));
+
+            tgbtn59.setText("E7");
+            tgbtn59.setBorder(null);
+            tgbtn59.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn59.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn59.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn59, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 383, 40, 40));
+
+            tgbtn60.setText("F0");
+            tgbtn60.setBorder(null);
+            tgbtn60.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn60.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn60.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn60, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 435, 40, 40));
+
+            tgbtn61.setText("F1");
+            tgbtn61.setBorder(null);
+            tgbtn61.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn61.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn61.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn61, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 435, 40, 40));
+
+            tgbtn62.setText("F2");
+            tgbtn62.setBorder(null);
+            tgbtn62.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn62.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn62.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn62, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 435, 40, 40));
+
+            tgbtn63.setText("F3");
+            tgbtn63.setBorder(null);
+            tgbtn63.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn63.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn63.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn63, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 435, 40, 40));
+
+            tgbtn64.setText("F4");
+            tgbtn64.setBorder(null);
+            tgbtn64.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn64.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn64.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn64, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 435, 40, 40));
+
+            tgbtn65.setText("F5");
+            tgbtn65.setBorder(null);
+            tgbtn65.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn65.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn65.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn65, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 435, 40, 40));
+
+            tgbtn66.setText("F6");
+            tgbtn66.setBorder(null);
+            tgbtn66.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn66.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn66.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn66, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 435, 40, 40));
+
+            tgbtn67.setText("F7");
+            tgbtn67.setBorder(null);
+            tgbtn67.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn67.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn67.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn67, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 435, 40, 40));
+
+            tgbtn68.setText("F8");
+            tgbtn68.setBorder(null);
+            tgbtn68.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn68.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn68.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn68, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 435, 40, 40));
+
+            tgbtn69.setText("F9");
+            tgbtn69.setBorder(null);
+            tgbtn69.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn69.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn69.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn69, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 435, 40, 40));
+
+            tgbtn70.setText("G0");
+            tgbtn70.setBorder(null);
+            tgbtn70.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn70.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn70.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn70, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 487, 40, 40));
+
+            tgbtn71.setText("G1");
+            tgbtn71.setBorder(null);
+            tgbtn71.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn71.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn71.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn71, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 487, 40, 40));
+
+            tgbtn72.setText("G2");
+            tgbtn72.setBorder(null);
+            tgbtn72.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn72.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn72.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn72, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 487, 40, 40));
+
+            tgbtn73.setText("G3");
+            tgbtn73.setBorder(null);
+            tgbtn73.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn73.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn73.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn73, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 487, 40, 40));
+
+            tgbtn74.setText("G4");
+            tgbtn74.setBorder(null);
+            tgbtn74.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn74.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn74.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn74, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 487, 40, 40));
+
+            tgbtn75.setText("G5");
+            tgbtn75.setBorder(null);
+            tgbtn75.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn75.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn75.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn75, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 487, 40, 40));
+
+            tgbtn76.setText("G6");
+            tgbtn76.setBorder(null);
+            tgbtn76.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn76.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn76.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn76, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 487, 40, 40));
+
+            tgbtn77.setText("G9");
+            tgbtn77.setBorder(null);
+            tgbtn77.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn77.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn77.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn77, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 487, 40, 40));
+
+            tgbtn78.setText("G8");
+            tgbtn78.setBorder(null);
+            tgbtn78.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn78.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn78.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn78, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 487, 40, 40));
+
+            tgbtn79.setText("G7");
+            tgbtn79.setBorder(null);
+            tgbtn79.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn79.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn79.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn79, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 487, 40, 40));
+
+            tgbtn80.setText("H0");
+            tgbtn80.setBorder(null);
+            tgbtn80.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn80.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn80.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn80, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 539, 40, 40));
+
+            tgbtn81.setText("H1");
+            tgbtn81.setBorder(null);
+            tgbtn81.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn81.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn81.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn81, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 539, 40, 40));
+
+            tgbtn82.setText("H2");
+            tgbtn82.setBorder(null);
+            tgbtn82.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn82.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn82.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn82, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 539, 40, 40));
+
+            tgbtn83.setText("H3");
+            tgbtn83.setBorder(null);
+            tgbtn83.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn83.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn83.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn83, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 539, 40, 40));
+
+            tgbtn84.setText("H4");
+            tgbtn84.setBorder(null);
+            tgbtn84.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn84.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn84.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn84, new org.netbeans.lib.awtextra.AbsoluteConstraints(825, 539, 40, 40));
+
+            tgbtn85.setText("H5");
+            tgbtn85.setBorder(null);
+            tgbtn85.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn85.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn85.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn85, new org.netbeans.lib.awtextra.AbsoluteConstraints(865, 539, 40, 40));
+
+            tgbtn86.setText("H6");
+            tgbtn86.setBorder(null);
+            tgbtn86.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn86.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn86.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn86, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 539, 40, 40));
+
+            tgbtn87.setText("H7");
+            tgbtn87.setBorder(null);
+            tgbtn87.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn87.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn87.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn87, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 539, 40, 40));
+
+            tgbtn88.setText("H8");
+            tgbtn88.setBorder(null);
+            tgbtn88.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn88.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn88.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn88, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 539, 40, 40));
+
+            tgbtn89.setText("H9");
+            tgbtn89.setBorder(null);
+            tgbtn89.setMaximumSize(new java.awt.Dimension(40, 40));
+            tgbtn89.setMinimumSize(new java.awt.Dimension(40, 40));
+            tgbtn89.setPreferredSize(new java.awt.Dimension(40, 40));
+            getContentPane().add(tgbtn89, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 539, 40, 40));
+
             jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background/seat.png"))); // NOI18N
             getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_47ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_47ActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         // TODO add your handling code here:
@@ -636,79 +773,6 @@ public class SeatFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_10;
-    private javax.swing.JButton btn_11;
-    private javax.swing.JButton btn_12;
-    private javax.swing.JButton btn_13;
-    private javax.swing.JButton btn_14;
-    private javax.swing.JButton btn_15;
-    private javax.swing.JButton btn_16;
-    private javax.swing.JButton btn_17;
-    private javax.swing.JButton btn_18;
-    private javax.swing.JButton btn_19;
-    private javax.swing.JButton btn_20;
-    private javax.swing.JButton btn_21;
-    private javax.swing.JButton btn_22;
-    private javax.swing.JButton btn_23;
-    private javax.swing.JButton btn_24;
-    private javax.swing.JButton btn_25;
-    private javax.swing.JButton btn_26;
-    private javax.swing.JButton btn_27;
-    private javax.swing.JButton btn_28;
-    private javax.swing.JButton btn_29;
-    private javax.swing.JButton btn_30;
-    private javax.swing.JButton btn_31;
-    private javax.swing.JButton btn_32;
-    private javax.swing.JButton btn_33;
-    private javax.swing.JButton btn_34;
-    private javax.swing.JButton btn_35;
-    private javax.swing.JButton btn_36;
-    private javax.swing.JButton btn_37;
-    private javax.swing.JButton btn_38;
-    private javax.swing.JButton btn_39;
-    private javax.swing.JButton btn_40;
-    private javax.swing.JButton btn_41;
-    private javax.swing.JButton btn_42;
-    private javax.swing.JButton btn_43;
-    private javax.swing.JButton btn_44;
-    private javax.swing.JButton btn_45;
-    private javax.swing.JButton btn_46;
-    private javax.swing.JButton btn_47;
-    private javax.swing.JButton btn_48;
-    private javax.swing.JButton btn_49;
-    private javax.swing.JButton btn_50;
-    private javax.swing.JButton btn_51;
-    private javax.swing.JButton btn_52;
-    private javax.swing.JButton btn_53;
-    private javax.swing.JButton btn_54;
-    private javax.swing.JButton btn_55;
-    private javax.swing.JButton btn_56;
-    private javax.swing.JButton btn_57;
-    private javax.swing.JButton btn_58;
-    private javax.swing.JButton btn_59;
-    private javax.swing.JButton btn_60;
-    private javax.swing.JButton btn_61;
-    private javax.swing.JButton btn_62;
-    private javax.swing.JButton btn_63;
-    private javax.swing.JButton btn_64;
-    private javax.swing.JButton btn_65;
-    private javax.swing.JButton btn_66;
-    private javax.swing.JButton btn_67;
-    private javax.swing.JButton btn_68;
-    private javax.swing.JButton btn_69;
-    private javax.swing.JButton btn_7;
-    private javax.swing.JButton btn_70;
-    private javax.swing.JButton btn_71;
-    private javax.swing.JButton btn_72;
-    private javax.swing.JButton btn_74;
-    private javax.swing.JButton btn_75;
-    private javax.swing.JButton btn_76;
-    private javax.swing.JButton btn_77;
-    private javax.swing.JButton btn_78;
-    private javax.swing.JButton btn_79;
-    private javax.swing.JButton btn_8;
-    private javax.swing.JButton btn_80;
-    private javax.swing.JButton btn_9;
     private javax.swing.JButton btn_back;
     private javax.swing.JButton btn_select;
     private javax.swing.JButton btn_select1;
@@ -726,5 +790,78 @@ public class SeatFrame extends javax.swing.JFrame {
     private javax.swing.JToggleButton tgbtn14;
     private javax.swing.JToggleButton tgbtn15;
     private javax.swing.JToggleButton tgbtn16;
+    private javax.swing.JToggleButton tgbtn17;
+    private javax.swing.JToggleButton tgbtn18;
+    private javax.swing.JToggleButton tgbtn19;
+    private javax.swing.JToggleButton tgbtn20;
+    private javax.swing.JToggleButton tgbtn21;
+    private javax.swing.JToggleButton tgbtn22;
+    private javax.swing.JToggleButton tgbtn23;
+    private javax.swing.JToggleButton tgbtn24;
+    private javax.swing.JToggleButton tgbtn25;
+    private javax.swing.JToggleButton tgbtn26;
+    private javax.swing.JToggleButton tgbtn27;
+    private javax.swing.JToggleButton tgbtn28;
+    private javax.swing.JToggleButton tgbtn29;
+    private javax.swing.JToggleButton tgbtn30;
+    private javax.swing.JToggleButton tgbtn31;
+    private javax.swing.JToggleButton tgbtn32;
+    private javax.swing.JToggleButton tgbtn33;
+    private javax.swing.JToggleButton tgbtn34;
+    private javax.swing.JToggleButton tgbtn35;
+    private javax.swing.JToggleButton tgbtn36;
+    private javax.swing.JToggleButton tgbtn37;
+    private javax.swing.JToggleButton tgbtn38;
+    private javax.swing.JToggleButton tgbtn39;
+    private javax.swing.JToggleButton tgbtn40;
+    private javax.swing.JToggleButton tgbtn41;
+    private javax.swing.JToggleButton tgbtn42;
+    private javax.swing.JToggleButton tgbtn43;
+    private javax.swing.JToggleButton tgbtn44;
+    private javax.swing.JToggleButton tgbtn45;
+    private javax.swing.JToggleButton tgbtn46;
+    private javax.swing.JToggleButton tgbtn47;
+    private javax.swing.JToggleButton tgbtn48;
+    private javax.swing.JToggleButton tgbtn49;
+    private javax.swing.JToggleButton tgbtn50;
+    private javax.swing.JToggleButton tgbtn51;
+    private javax.swing.JToggleButton tgbtn52;
+    private javax.swing.JToggleButton tgbtn53;
+    private javax.swing.JToggleButton tgbtn54;
+    private javax.swing.JToggleButton tgbtn55;
+    private javax.swing.JToggleButton tgbtn56;
+    private javax.swing.JToggleButton tgbtn57;
+    private javax.swing.JToggleButton tgbtn58;
+    private javax.swing.JToggleButton tgbtn59;
+    private javax.swing.JToggleButton tgbtn60;
+    private javax.swing.JToggleButton tgbtn61;
+    private javax.swing.JToggleButton tgbtn62;
+    private javax.swing.JToggleButton tgbtn63;
+    private javax.swing.JToggleButton tgbtn64;
+    private javax.swing.JToggleButton tgbtn65;
+    private javax.swing.JToggleButton tgbtn66;
+    private javax.swing.JToggleButton tgbtn67;
+    private javax.swing.JToggleButton tgbtn68;
+    private javax.swing.JToggleButton tgbtn69;
+    private javax.swing.JToggleButton tgbtn70;
+    private javax.swing.JToggleButton tgbtn71;
+    private javax.swing.JToggleButton tgbtn72;
+    private javax.swing.JToggleButton tgbtn73;
+    private javax.swing.JToggleButton tgbtn74;
+    private javax.swing.JToggleButton tgbtn75;
+    private javax.swing.JToggleButton tgbtn76;
+    private javax.swing.JToggleButton tgbtn77;
+    private javax.swing.JToggleButton tgbtn78;
+    private javax.swing.JToggleButton tgbtn79;
+    private javax.swing.JToggleButton tgbtn80;
+    private javax.swing.JToggleButton tgbtn81;
+    private javax.swing.JToggleButton tgbtn82;
+    private javax.swing.JToggleButton tgbtn83;
+    private javax.swing.JToggleButton tgbtn84;
+    private javax.swing.JToggleButton tgbtn85;
+    private javax.swing.JToggleButton tgbtn86;
+    private javax.swing.JToggleButton tgbtn87;
+    private javax.swing.JToggleButton tgbtn88;
+    private javax.swing.JToggleButton tgbtn89;
     // End of variables declaration//GEN-END:variables
 }
