@@ -10,15 +10,18 @@ public class RegisterFrame extends javax.swing.JFrame {
     
     public RegisterFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     
     private boolean checkDuplicatedId(String id){
         // 중복 확인
         int rs = 0;
-        DB db = new DB();
+        DB db = new DB();   
         String sql = "select exists(select * from users where id = ?) as result";
-        try{
-            db.open(sql);
+        
+        try{        
+            db.open();
+            db.stmt = db.connect.prepareStatement(sql);
             db.stmt.setString(1, id);
             db.rs = db.stmt.executeQuery();
             while(db.rs.next()){
@@ -50,7 +53,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         txtPWCheck = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("회원가입");
+        setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -231,7 +234,9 @@ public class RegisterFrame extends javax.swing.JFrame {
             DB db = new DB();
             String sql = "insert into users (id, pw, nickname) values (?, md5(?), ?)";   
             try {
-                db.open(sql);
+                db.open();
+                db.stmt = db.connect.prepareStatement(sql);
+                
                 db.stmt.setString(1, id);
                 db.stmt.setString(2, pw);
                 db.stmt.setString(3, nickname);               
@@ -244,6 +249,8 @@ public class RegisterFrame extends javax.swing.JFrame {
                 dispose();
             } catch (SQLException e) {
                 System.out.println("Register SQLException : " + e.getMessage());
+            } finally {
+                db.close();
             }
         }
     }//GEN-LAST:event_btnRegisterActionPerformed

@@ -19,6 +19,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.Timer;
+import main.MainFrame;
+import main.ReserveFrame;
 import net.miginfocom.swing.MigLayout;
 
 public class ImageItem extends JComponent {
@@ -75,6 +77,9 @@ public class ImageItem extends JComponent {
             @Override
             public void mouseClicked(MouseEvent me) {
                 System.out.println(movieID);
+                ReserveFrame frame = new ReserveFrame(MainFrame.getUser());
+                frame.setVisible(true);
+                
             }               
         });   
     }
