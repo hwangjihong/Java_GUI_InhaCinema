@@ -2,19 +2,33 @@ package main;
 
 public class MainFrame extends javax.swing.JFrame {
 
+    private static User user = null;
+    private static MainFrame frame = null;
+
+    public static User getUser() {
+        frame.dispose();
+        return user;
+    }
    
     public MainFrame() {
         initComponents();
     }
-
+    
+    public MainFrame(User user) {
+        initComponents();
+        MainFrame.user = user;
+        frame = this;
+        setLocationRelativeTo(null); // 프레임 창 화면 가운데
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        imageSlider1 = new swing.ImageSlider();
+        sldImage = new swing.ImageSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("InhaCinema");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -31,15 +45,14 @@ public class MainFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, 50, -1));
 
-        imageSlider1.setOpaque(false);
-        getContentPane().add(imageSlider1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1290, 697));
+        sldImage.setOpaque(false);
+        getContentPane().add(sldImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1290, 697));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        imageSlider1.getSb().setValue(imageSlider1.getSb().getValue() + 30);
+        sldImage.getSb().setValue(sldImage.getSb().getValue() + 30);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
@@ -75,7 +88,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private swing.ImageSlider imageSlider1;
     private javax.swing.JButton jButton1;
+    private swing.ImageSlider sldImage;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,6 +12,7 @@ public class LoginFrame extends javax.swing.JFrame {
     public LoginFrame() {
         initComponents();
         initCaptcha();
+        setLocationRelativeTo(null); // 프레임 창 화면 가운데
     }
     
     // 캡챠 이미지 생성
@@ -35,13 +36,13 @@ public class LoginFrame extends javax.swing.JFrame {
         txtPW = new javax.swing.JPasswordField();
         lblLogin = new javax.swing.JLabel();
         lblCaptcha = new javax.swing.JLabel();
-        btnCaptchaAudio = new javax.swing.JButton();
         btnCaptchaRefresh = new javax.swing.JButton();
         txtCaptchaAnswer = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("로그인");
+        setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
+        setLocationByPlatform(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -128,11 +129,6 @@ public class LoginFrame extends javax.swing.JFrame {
         pnBackground.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
         pnBackground.add(lblCaptcha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 250, 45));
 
-        btnCaptchaAudio.setText("🔊");
-        btnCaptchaAudio.setBorder(null);
-        btnCaptchaAudio.setFocusable(false);
-        pnBackground.add(btnCaptchaAudio, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 373, 40, 25));
-
         btnCaptchaRefresh.setText("🔄");
         btnCaptchaRefresh.setBorder(null);
         btnCaptchaRefresh.setFocusable(false);
@@ -202,7 +198,6 @@ public class LoginFrame extends javax.swing.JFrame {
         String id = txtID.getText();
         String pw = txtPW.getText();
         String ct = txtCaptchaAnswer.getText();
-        System.out.println(pw);
         if(id.equals("아이디") || id.length() == 0){
             JOptionPane.showMessageDialog(null, "아이디를 입력해주세요.");
         } else if(pw.equals("비밀번호") || pw.length() == 0){
@@ -212,20 +207,57 @@ public class LoginFrame extends javax.swing.JFrame {
         } else if(!jct.captchaAnswer(ct)){
             JOptionPane.showMessageDialog(null, "자동완성 방지문자가 틀렸습니다.\n다시 입력해주세요.");
             initCaptcha();
+            txtCaptchaAnswer.setText(null);
         }else{
             DB db = new DB();
-            String sql = "SELECT count(*)FROM users WHERE id = ? and pw = md5(?)";
-            db.open(sql);
+            String sql = "SELECT count(*) as isIdValid FROM users WHERE id = ?"; // 존재하는 ID인지 확인하는 SQL    
             try {
+                db.open();
                 db.stmt = db.connect.prepareStatement(sql);
+                db.stmt.setString(1, id);
                 db.rs = db.stmt.executeQuery();
-                while(db.rs.next()){
-                System.out.println(db.rs.getString("count(*)"));}
+                
+                int isIdValid = 0;
+                while(db.rs.next()) {isIdValid = db.rs.getInt("isIdValid");}
+                
+                if(isIdValid == 1) { // 아이디가 존재하는 경우
+                    sql = "SELECT * FROM users WHERE id = ? and pw = md5(?)"; // ID와 PW가 일치하는지 확인하는 SQL
+                    db.stmt = db.connect.prepareStatement(sql);
+                    db.stmt.setString(1, id);
+                    db.stmt.setString(2, pw);
+                    db.rs = db.stmt.executeQuery();
+                    
+                    int isAllValid = 0;
+                    User user = new User();
+                    
+                    while(db.rs.next()) {
+                        isAllValid = 1;
+                        user.setCode(db.rs.getInt("code"));
+                        user.setId(db.rs.getString("id"));
+                        user.setNickname(db.rs.getString("nickname"));
+                    }
+                   
+                    if(isAllValid == 1) { // 비밀번호가 일치                        
+                        MainFrame frame = new MainFrame(user);
+			frame.setVisible(true);
+                        dispose();
+                        return;
+                    }else { // 비밀번호 불일치
+                        JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다.");
+                    }   
+                } else { // 아이디가 존재하지 않을 경우
+                    JOptionPane.showMessageDialog(null, "존재하지 않는 아이디 입니다."); 
+                }
+                initCaptcha();
+                txtID.setText("아이디");
+                txtPW.setText("비밀번호");
+                txtCaptchaAnswer.setText("자동완성 방지문자");
             } catch (SQLException e) {
-                System.out.println("asda");
-            }
-            
-            db.close();
+                System.out.println("Login SQLExceiption : " + e.getMessage());
+            } finally {
+                
+                db.close();
+            }        
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -329,7 +361,6 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCaptchaAudio;
     private javax.swing.JButton btnCaptchaRefresh;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel lblCaptcha;

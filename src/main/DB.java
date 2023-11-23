@@ -18,23 +18,20 @@ public class DB {
     PreparedStatement stmt;
     ResultSet rs;
     
-    public void open(String sql){
+    public void open(){
         try{
             Class.forName(strDriver);           
             connect = DriverManager.getConnection(strURL, strUser, strPWD);
-            stmt = connect.prepareStatement(sql);
         }catch(ClassNotFoundException | SQLException e){
             System.out.println("open SQLException or ClassNotFoundException : " + e.getMessage());
         }
     }
     
     public void close(){
-        try{
-            stmt.close();
-            connect.close();
-        }catch(SQLException e){
-            System.out.println("close SQLException : " + e.getMessage());
-        }
+        if(rs != null) try {rs.close();} catch (SQLException e) {System.out.println("ResultSet Close SQLException : " + e.getMessage());}
+        if(stmt != null) try {stmt.close();} catch (SQLException e) {System.out.println("PreparedStatement Close SQLException : " + e.getMessage());}
+        if(connect != null) try {connect.close();} catch (SQLException e) {System.out.println("Connection Close SQLException : " + e.getMessage());}
+          System.out.println("DB Close Success");
     }
     
     public void query(String sql, String... str){

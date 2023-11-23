@@ -1,12 +1,10 @@
 package main;
 
-import java.awt.Color;
-import javax.swing.BorderFactory;
-
 public class SeatFrame extends javax.swing.JFrame {
 
     public SeatFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -105,6 +103,7 @@ public class SeatFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
