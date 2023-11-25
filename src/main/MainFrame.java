@@ -1,25 +1,39 @@
 package main;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import swing.ImageItem;
+
 public class MainFrame extends javax.swing.JFrame {
 
-    private static User user = null;
-    private static MainFrame frame = null;
+    private  User user;
 
-    public static User getUser() {
-        frame.dispose();
-        return user;
-    }
-   
     public MainFrame() {
         initComponents();
+        
+        ArrayList<ImageItem> ImgItem = sldImage.getImgItem();
+        
+        for(int i = 0; i < ImgItem.size(); i++){
+            int movieID = i;
+            ImgItem.get(i).addMouseListener(new MouseAdapter() {      
+                @Override
+                public void mouseClicked(MouseEvent me) {
+                    System.out.println(""+ImgItem.get(movieID).getMovieID());
+                    ReserveFrame frame = new ReserveFrame(user);
+                    frame.setVisible(true);
+                    dispose();
+            }               
+        });
+        }
     }
     
     public MainFrame(User user) {
-        initComponents();
-        MainFrame.user = user;
-        frame = this;
+        this();
+        this.user = user;
         setLocationRelativeTo(null); // 프레임 창 화면 가운데
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

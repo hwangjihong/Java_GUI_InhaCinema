@@ -3,6 +3,7 @@ package swing;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
@@ -11,7 +12,9 @@ import scrollBar.ScrollBar;
 public class ImageSlider extends javax.swing.JPanel {
 
     private final MigLayout imageLayout;
-    private ScrollBar sb = new ScrollBar();
+    private final ScrollBar sb = new ScrollBar();
+    private final ArrayList<ImageItem> imgItem = new ArrayList<>();;  
+    
     public ImageSlider() {
         initComponents();
         imageLayout = new MigLayout("aligny center", "25[]25");
@@ -20,18 +23,25 @@ public class ImageSlider extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBar(sb);
         addImage();
     }
-    public ScrollBar getSb(){
-        return sb;
-    }
+   
     private void addImage() {
         pnItem.add(getItem(new ImageIcon(getClass().getResource("/Image/poster/movie-1.jpg")), 1), "w 286, h 476");
         pnItem.add(getItem(new ImageIcon(getClass().getResource("/Image/poster/movie-2.jpg")), 2), "w 286, h 476");
     }
 
     private ImageItem getItem(Icon icon, int movieID) {
-        return new ImageItem(icon, imageLayout, movieID);
+        ImageItem img = new ImageItem(icon, imageLayout, movieID);
+        imgItem.add(img);
+        return img;
     }
-
+    
+    public ScrollBar getSb(){
+           return sb;
+    }
+    
+    public ArrayList<ImageItem> getImgItem() {
+        return imgItem;
+    }   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
