@@ -8,13 +8,12 @@ public class ReserveFrame extends javax.swing.JFrame {
     
     public ReserveFrame() {
         initComponents();
+        setLocationRelativeTo(null);
         btnBack.setBackground(new Color(255,0,0,0));
     }
     public ReserveFrame(User user) {
-        initComponents();
-        this.user = user;
-        setLocationRelativeTo(null);
-        btnBack.setBackground(new Color(255,0,0,0));
+        this();
+        this.user = user;      
     }
 
     @SuppressWarnings("unchecked")

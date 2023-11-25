@@ -19,17 +19,15 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.Timer;
-import main.MainFrame;
-import main.ReserveFrame;
 import net.miginfocom.swing.MigLayout;
 
 public class ImageItem extends JComponent {
 
-    private Icon image;
+    private final Icon image;
     private final int shadowSize = 50;
     private Timer timer;
     private boolean show;
-    private int movieID;
+    private final int movieID;
     
     public ImageItem(Icon image, MigLayout mig, int movieID) {
         //  Test Image
@@ -72,15 +70,7 @@ public class ImageItem extends JComponent {
             public void mouseExited(MouseEvent me) {
                 show = false;
                 timer.start();
-            }
-            
-            @Override
-            public void mouseClicked(MouseEvent me) {
-                System.out.println(movieID);
-                ReserveFrame frame = new ReserveFrame(MainFrame.getUser());
-                frame.setVisible(true);
-                
-            }               
+            }                      
         });   
     }
     
@@ -142,5 +132,9 @@ public class ImageItem extends JComponent {
 
     private Image toImage(Icon icon) {
         return ((ImageIcon) icon).getImage();
+    }
+    
+    public int getMovieID() {
+        return movieID;
     }
 }
