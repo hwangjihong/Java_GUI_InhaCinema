@@ -15,11 +15,11 @@ public class MainFrame extends javax.swing.JFrame {
         ArrayList<ImageItem> ImgItem = sldImage.getImgItem();
         
         for(int i = 0; i < ImgItem.size(); i++){
-            int movieID = i;
+            Movie movie = ImgItem.get(i).getMovie();
             ImgItem.get(i).addMouseListener(new MouseAdapter() {      
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                    ReserveFrame frame = new ReserveFrame(user);
+                    ReserveFrame frame = new ReserveFrame(user, movie);
                     frame.setVisible(true);
                     dispose();
             }               
