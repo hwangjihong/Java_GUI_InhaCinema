@@ -2,7 +2,17 @@ package main;
 
 public class SeatFrame extends javax.swing.JFrame {
 
+    private User user = null;
+    private Movie movie = null;
+    
     public SeatFrame() {
+        initComponents();
+        setLocationRelativeTo(null);
+    }
+    
+    public SeatFrame(User user, Movie movie, String date, String time, int personnel, int totalPrice) {
+        this.user = user;
+        this.movie = movie;
         initComponents();
         setLocationRelativeTo(null);
     }

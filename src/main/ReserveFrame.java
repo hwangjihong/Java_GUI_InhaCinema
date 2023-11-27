@@ -5,11 +5,14 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.sql.SQLException;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class ReserveFrame extends javax.swing.JFrame {
 
     private User user = null;
     private Movie movie = null;
+    private int totalPrice;
     
     public ReserveFrame() {
         initComponents();
@@ -61,6 +64,7 @@ public class ReserveFrame extends javax.swing.JFrame {
         lblRunTime = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         lblTheme = new javax.swing.JLabel();
+        lblOp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(125, 30));
@@ -69,49 +73,69 @@ public class ReserveFrame extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cbTime.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        cbTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cbTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, 350, 45));
+        jPanel1.add(cbTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, 250, 45));
 
         btnAdultCountM.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         btnAdultCountM.setText("+");
         btnAdultCountM.setBorder(null);
-        jPanel1.add(btnAdultCountM, new org.netbeans.lib.awtextra.AbsoluteConstraints(906, 425, 45, 45));
+        btnAdultCountM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAdultCountM, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 420, 45, 45));
 
         lblAdultCount.setBackground(new java.awt.Color(255, 255, 255));
         lblAdultCount.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         lblAdultCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAdultCount.setText("0");
         lblAdultCount.setOpaque(true);
-        jPanel1.add(lblAdultCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 425, 60, 45));
+        jPanel1.add(lblAdultCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 420, 60, 45));
 
         btnAdultCountP.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         btnAdultCountP.setText("-");
         btnAdultCountP.setBorder(null);
-        jPanel1.add(btnAdultCountP, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 425, 45, 45));
+        btnAdultCountP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAdultCountP, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 45, 45));
 
         cbDate.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jPanel1.add(cbDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 350, 45));
+        jPanel1.add(cbDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 250, 45));
 
         btnChildCountM.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         btnChildCountM.setText("-");
         btnChildCountM.setBorder(null);
-        jPanel1.add(btnChildCountM, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 360, 45, 45));
+        btnChildCountM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnChildCountM, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 360, 45, 45));
 
         btnChildCountP.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         btnChildCountP.setText("+");
         btnChildCountP.setBorder(null);
-        jPanel1.add(btnChildCountP, new org.netbeans.lib.awtextra.AbsoluteConstraints(906, 360, 45, 45));
+        btnChildCountP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCountActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnChildCountP, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 360, 45, 45));
 
         lblChildCount.setBackground(new java.awt.Color(255, 255, 255));
         lblChildCount.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
         lblChildCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblChildCount.setText("0");
         lblChildCount.setOpaque(true);
-        jPanel1.add(lblChildCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 60, 45));
+        jPanel1.add(lblChildCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 360, 60, 45));
 
-        lblPrice.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
+        lblPrice.setFont(new java.awt.Font("맑은 고딕", 0, 36)); // NOI18N
         lblPrice.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 340, 45));
+        lblPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 180, 45));
 
         btnSelect.setBackground(new java.awt.Color(40, 71, 192));
         btnSelect.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
@@ -124,7 +148,7 @@ public class ReserveFrame extends javax.swing.JFrame {
                 btnSelectActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 630, 300, 45));
+        jPanel1.add(btnSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 630, 300, 45));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/back1.png"))); // NOI18N
         btnBack.setContentAreaFilled(false);
@@ -138,22 +162,27 @@ public class ReserveFrame extends javax.swing.JFrame {
 
         pnPoster.setMinimumSize(new java.awt.Dimension(286, 429));
         pnPoster.setPreferredSize(new java.awt.Dimension(286, 429));
-        jPanel1.add(pnPoster, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 286, 429));
+        jPanel1.add(pnPoster, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 286, 429));
 
         lblRunTime.setFont(new java.awt.Font("맑은 고딕", 0, 18)); // NOI18N
         lblRunTime.setForeground(new java.awt.Color(255, 255, 255));
         lblRunTime.setText("시간");
-        jPanel1.add(lblRunTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, -1, -1));
+        jPanel1.add(lblRunTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, -1, -1));
 
-        lblTitle.setFont(new java.awt.Font("맑은 고딕", 0, 22)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("맑은 고딕", 1, 22)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("제목");
-        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, -1, -1));
+        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
 
         lblTheme.setFont(new java.awt.Font("맑은 고딕", 0, 18)); // NOI18N
         lblTheme.setForeground(new java.awt.Color(255, 255, 255));
         lblTheme.setText("장르");
-        jPanel1.add(lblTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, -1, -1));
+        jPanel1.add(lblTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 560, -1, -1));
+
+        lblOp.setFont(new java.awt.Font("맑은 고딕", 0, 36)); // NOI18N
+        lblOp.setForeground(new java.awt.Color(255, 255, 255));
+        lblOp.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(lblOp, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 540, 40, 45));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
@@ -162,7 +191,11 @@ public class ReserveFrame extends javax.swing.JFrame {
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
         // TODO add your handling code here:
-        SeatFrame frame = new SeatFrame();
+        String date = (String )cbDate.getSelectedItem();
+        String time = (String )cbTime.getSelectedItem();
+        int personnel = Integer.parseInt(lblChildCount.getText()) + Integer.parseInt(lblAdultCount.getText());
+        
+        SeatFrame frame = new SeatFrame(user, movie, date, time, personnel, totalPrice);
         frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSelectActionPerformed
@@ -172,10 +205,50 @@ public class ReserveFrame extends javax.swing.JFrame {
 	frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+    
+    // 다른 라벨의 값을 가져오는 메서드
+    private int getOtherLabelValue(JLabel currentLabel) {
+        // 현재 라벨이 lblChildCount인 경우 lblAdultCount의 값 반환, 그렇지 않으면 lblChildCount의 값 반환
+        return (currentLabel == lblChildCount) ? Integer.parseInt(lblAdultCount.getText()) : Integer.parseInt(lblChildCount.getText());
+    }
+    
+    private void btnCountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCountActionPerformed
+        // 클릭된 버튼을 가져옴
+        JButton clickedButton = (JButton) evt.getSource();
+        // 클릭된 버튼에 따라 대상 라벨 선택
+        JLabel targetLabel = (clickedButton == btnChildCountM || clickedButton == btnChildCountP) ? lblChildCount : lblAdultCount;
+        
+        int price = (targetLabel == lblChildCount) ? 10000 : 13000;
+
+        // 대상 라벨의 현재 값
+        int currentValue = Integer.parseInt(targetLabel.getText());
+
+        // + 버튼이 클릭되고 최대 예매 인원(6명)을 초과하지 않는 경우
+        if (clickedButton.getText().equals("+") && currentValue + getOtherLabelValue(targetLabel) < 6) {
+            // 인원 증가
+            targetLabel.setText(Integer.toString(currentValue + 1));
+            // 가격 증가
+            totalPrice = totalPrice+price;
+        } 
+        // - 버튼이 클릭되고 현재 값이 0보다 큰 경우
+        else if (clickedButton.getText().equals("-") && currentValue > 0) {
+            // 인원 감소
+            targetLabel.setText(Integer.toString(currentValue - 1));
+            // 가격 감소
+            totalPrice = totalPrice-price;
+        }
+        if(totalPrice <= 0){
+            lblPrice.setText("");
+            lblOp.setText("");
+        }else{
+            lblPrice.setText(Integer.toString(totalPrice));
+            lblOp.setText("₩");
+        }
+    }//GEN-LAST:event_btnCountActionPerformed
 
     private void cbDateSetItem(){
         DB db = new DB();
-        String sql = "SELECT screeningDate FROM screening WHERE code = ?";
+        String sql = "SELECT DISTINCT screeningDate FROM screening WHERE movieCode = ?";
         
         try {
             db.open();
@@ -195,7 +268,7 @@ public class ReserveFrame extends javax.swing.JFrame {
     
     private void cbTimeSetItem(){
         DB db = new DB();
-        String sql = "SELECT screeningTime FROM screening WHERE code = ?";
+        String sql = "SELECT DISTINCT screeningTime FROM screening WHERE movieCode = ?";
         
         try {
             db.open();
@@ -260,6 +333,7 @@ public class ReserveFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAdultCount;
     private javax.swing.JLabel lblChildCount;
+    private javax.swing.JLabel lblOp;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblRunTime;
     private javax.swing.JLabel lblTheme;
