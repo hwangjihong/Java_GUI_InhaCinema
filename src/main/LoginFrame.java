@@ -232,7 +232,6 @@ public class LoginFrame extends javax.swing.JFrame {
                     
                     while(db.rs.next()) {
                         isAllValid = 1;
-                        user.setCode(db.rs.getInt("code"));
                         user.setId(db.rs.getString("id"));
                         user.setNickname(db.rs.getString("nickname"));
                     }
