@@ -19,6 +19,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.Timer;
+import main.Movie;
 import net.miginfocom.swing.MigLayout;
 
 public class ImageItem extends JComponent {
@@ -27,11 +28,11 @@ public class ImageItem extends JComponent {
     private final int shadowSize = 50;
     private Timer timer;
     private boolean show;
-    private final int movieID;
+    private Movie movie;
     
-    public ImageItem(Icon image, MigLayout mig, int movieID) {
+    public ImageItem(Icon image, MigLayout mig, Movie movie) {
         //  Test Image
-        this.movieID = movieID;
+        this.movie = movie;
         this.image = image;
         setBackground(Color.BLACK);
         timer = new Timer(0, new ActionListener() {
@@ -134,7 +135,4 @@ public class ImageItem extends JComponent {
         return ((ImageIcon) icon).getImage();
     }
     
-    public int getMovieID() {
-        return movieID;
-    }
 }

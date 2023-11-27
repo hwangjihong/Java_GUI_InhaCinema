@@ -14,9 +14,9 @@ public class DB {
     String strUser = BaseEnv.DBUSER;
     String strPWD = BaseEnv.DBPWD;
     
-    Connection connect;
-    PreparedStatement stmt;
-    ResultSet rs;
+    public Connection connect;
+    public PreparedStatement stmt;
+    public ResultSet rs;
     
     public void open(){
         try{
@@ -32,13 +32,5 @@ public class DB {
         if(stmt != null) try {stmt.close();} catch (SQLException e) {System.out.println("PreparedStatement Close SQLException : " + e.getMessage());}
         if(connect != null) try {connect.close();} catch (SQLException e) {System.out.println("Connection Close SQLException : " + e.getMessage());}
           System.out.println("DB Close Success");
-    }
-    
-    public void query(String sql, String... str){
-        try{
-            stmt = connect.prepareStatement(sql);
-        }catch(SQLException e){
-            System.out.println("query SQLExceiption : " +e.getMessage());
-        }
     }
 }

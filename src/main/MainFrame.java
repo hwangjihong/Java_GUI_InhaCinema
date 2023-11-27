@@ -19,7 +19,6 @@ public class MainFrame extends javax.swing.JFrame {
             ImgItem.get(i).addMouseListener(new MouseAdapter() {      
                 @Override
                 public void mouseClicked(MouseEvent me) {
-                    System.out.println(""+ImgItem.get(movieID).getMovieID());
                     ReserveFrame frame = new ReserveFrame(user);
                     frame.setVisible(true);
                     dispose();
