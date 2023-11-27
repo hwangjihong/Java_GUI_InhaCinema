@@ -30,6 +30,7 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame(User user) {
         this();
         this.user = user;
+        jLabel1.setText(user.getNickname() + "님 반갑습니다");
         setLocationRelativeTo(null); // 프레임 창 화면 가운데
     }
     
@@ -37,6 +38,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         sldImage = new swing.ImageSlider();
 
@@ -47,6 +49,11 @@ public class MainFrame extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("반갑습니다");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1200, 40));
 
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -102,6 +109,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private swing.ImageSlider sldImage;
     // End of variables declaration//GEN-END:variables
 }
