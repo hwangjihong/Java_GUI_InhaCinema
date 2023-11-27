@@ -4,11 +4,12 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.sql.SQLException;
 
 public class ReserveFrame extends javax.swing.JFrame {
 
-    private User user;
-    private Movie movie;
+    private User user = null;
+    private Movie movie = null;
     
     public ReserveFrame() {
         initComponents();
@@ -25,6 +26,9 @@ public class ReserveFrame extends javax.swing.JFrame {
         lblTitle.setText(movie.getMovieTitle());
         lblTheme.setText(movie.getMovieTheme());
         lblRunTime.setText(movie.getRunTime());
+        
+        cbDateSetItem();
+        cbTimeSetItem();
     }
 
     @SuppressWarnings("unchecked")
@@ -86,7 +90,6 @@ public class ReserveFrame extends javax.swing.JFrame {
         jPanel1.add(btnAdultCountP, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 425, 45, 45));
 
         cbDate.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        cbDate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 350, 45));
 
         btnChildCountM.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
@@ -170,6 +173,46 @@ public class ReserveFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void cbDateSetItem(){
+        DB db = new DB();
+        String sql = "SELECT screeningDate FROM screening WHERE code = ?";
+        
+        try {
+            db.open();
+            db.stmt = db.connect.prepareStatement(sql);
+            db.stmt.setInt(1, movie.getMovieCode());
+            db.rs = db.stmt.executeQuery();
+            
+            while(db.rs.next()) {
+                cbDate.addItem(db.rs.getString("screeningDate"));
+            }
+        } catch(SQLException e) {
+            System.out.println("cbDateSetItem SQLException : " + e.getMessage());
+        } finally {
+            db.close();
+        }
+    }
+    
+    private void cbTimeSetItem(){
+        DB db = new DB();
+        String sql = "SELECT screeningTime FROM screening WHERE code = ?";
+        
+        try {
+            db.open();
+            db.stmt = db.connect.prepareStatement(sql);
+            db.stmt.setInt(1, movie.getMovieCode());
+            db.rs = db.stmt.executeQuery();
+            
+            while(db.rs.next()) {
+                cbTime.addItem(db.rs.getString("screeningTime"));
+            }
+        } catch(SQLException e) {
+            System.out.println("cbDateSetItem SQLException : " + e.getMessage());
+        } finally {
+            db.close();
+        }
+    }
+    
     /**s
      * @param args the command line arguments
      */
