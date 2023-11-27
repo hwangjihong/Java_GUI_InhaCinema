@@ -29,6 +29,10 @@ public class ImageItem extends JComponent {
     private Timer timer;
     private boolean show;
     private Movie movie;
+
+    public Movie getMovie() {
+        return movie;
+    }
     
     public ImageItem(Icon image, MigLayout mig, Movie movie) {
         //  Test Image
