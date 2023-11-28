@@ -3,7 +3,7 @@ package main;
 public class User {
     private String id;
     private String nickname;
-
+    
     public String getId() {
         return id;
     }

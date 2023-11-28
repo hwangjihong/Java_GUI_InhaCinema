@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.event.KeyEvent;
 
 public class LoginFrame extends javax.swing.JFrame {
     JCaptcha jct = new JCaptcha();
@@ -53,7 +54,6 @@ public class LoginFrame extends javax.swing.JFrame {
         txtID.setForeground(new java.awt.Color(153, 153, 153));
         txtID.setText("아이디");
         txtID.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtID.setFocusable(false);
         txtID.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtIDFocusGained(evt);
@@ -102,7 +102,6 @@ public class LoginFrame extends javax.swing.JFrame {
         txtPW.setText("비밀번호");
         txtPW.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         txtPW.setEchoChar((char) 0);
-        txtPW.setFocusable(false);
         txtPW.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtPWFocusGained(evt);
@@ -144,7 +143,6 @@ public class LoginFrame extends javax.swing.JFrame {
         txtCaptchaAnswer.setForeground(new java.awt.Color(153, 153, 153));
         txtCaptchaAnswer.setText("자동완성 방지문자");
         txtCaptchaAnswer.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtCaptchaAnswer.setFocusable(false);
         txtCaptchaAnswer.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtCaptchaAnswerFocusGained(evt);
@@ -191,6 +189,10 @@ public class LoginFrame extends javax.swing.JFrame {
     private void txtPWKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPWKeyTyped
         // txtPW 텍스트 필드에 키가 입력될 시
         if(txtPW.getText().length() > 16) evt.consume();
+        if(evt.getKeyCode() == KeyEvent.VK_TAB) {
+            txtCaptchaAnswer.setFocusable(true);
+            System.out.println("txtPW");
+        }
     }//GEN-LAST:event_txtPWKeyTyped
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
