@@ -66,7 +66,6 @@
                 <EtchetBorder/>
               </Border>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtIDFocusGained"/>
@@ -142,7 +141,6 @@
             <Property name="echoChar" type="char" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="(char) 0" type="code"/>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtPWFocusGained"/>
@@ -213,7 +211,6 @@
                 <EtchetBorder/>
               </Border>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCaptchaAnswerFocusGained"/>

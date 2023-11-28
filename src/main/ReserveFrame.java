@@ -1,30 +1,29 @@
 package main;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class ReserveFrame extends javax.swing.JFrame {
 
     private User user = null;
     private Movie movie = null;
+    private Screening screening = new Screening();
     private int totalPrice;
     
     public ReserveFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        btnBack.setBackground(new Color(255,0,0,0));
     }
     public ReserveFrame(User user, Movie movie) {
         this.user = user;
         this.movie = movie;
         initComponents();
         setLocationRelativeTo(null);
-        btnBack.setBackground(new Color(255,0,0,0));
         
         lblTitle.setText(movie.getMovieTitle());
         lblTheme.setText(movie.getMovieTheme());
@@ -190,12 +189,20 @@ public class ReserveFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectActionPerformed
-        // TODO add your handling code here:
-        String date = (String )cbDate.getSelectedItem();
-        String time = (String )cbTime.getSelectedItem();
-        int personnel = Integer.parseInt(lblChildCount.getText()) + Integer.parseInt(lblAdultCount.getText());
+        // 예매 버튼
+        if(totalPrice <= 0){
+            JOptionPane.showMessageDialog(null, "인원을 한 명이상 선택해주세요.");
+            return;
+        }
+
+        screening.setScreeningDate((String )cbDate.getSelectedItem());
+        screening.setScreeningTime((String )cbTime.getSelectedItem());
+        screening.setChildCount(lblChildCount.getText());
+        screening.setAdultCount(lblAdultCount.getText());
+        screening.setTotalPrice(totalPrice);
+        setScreeningCode(movie.getMovieCode(),screening.getScreeningDate(),screening.getScreeningTime());
         
-        SeatFrame frame = new SeatFrame(user, movie, date, time, personnel, totalPrice);
+        SeatFrame frame = new SeatFrame(user, movie, screening);
         frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnSelectActionPerformed
@@ -237,6 +244,7 @@ public class ReserveFrame extends javax.swing.JFrame {
             // 가격 감소
             totalPrice = totalPrice-price;
         }
+        // 총 가격 표기
         if(totalPrice <= 0){
             lblPrice.setText("");
             lblOp.setText("");
@@ -281,6 +289,28 @@ public class ReserveFrame extends javax.swing.JFrame {
             }
         } catch(SQLException e) {
             System.out.println("cbDateSetItem SQLException : " + e.getMessage());
+        } finally {
+            db.close();
+        }
+    }
+    
+    private void setScreeningCode(int movieCode, String screeningDate, String screeningTime){
+        DB db = new DB();
+        String sql = "SELECT screeningCode FROM screening WHERE movieCode = ? AND screeningDate = ? AND screeningTime = ?";
+        
+        try {
+            db.open();
+            db.stmt = db.connect.prepareStatement(sql);
+            db.stmt.setInt(1, movie.getMovieCode());
+            db.stmt.setString(2, screeningDate);
+            db.stmt.setString(3, screeningTime);
+            db.rs = db.stmt.executeQuery();
+            
+            if(db.rs.next()) {
+                screening.setScreeningCode(db.rs.getInt("screeningCode"));
+            }
+        } catch(SQLException e) {
+            System.out.println("setScreeningCode SQLException : " + e.getMessage());
         } finally {
             db.close();
         }
