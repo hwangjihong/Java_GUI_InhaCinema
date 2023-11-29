@@ -1,9 +1,11 @@
 package main;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -16,7 +18,7 @@ public class SeatFrame extends javax.swing.JFrame {
     
     private User user = null;
     private Movie movie = null;
-    Screening screening = null;
+    private Screening screening = null;
     
     private int button_x, button_y;
     private ArrayList<Integer> reservedSeat = new ArrayList<>();
@@ -128,6 +130,19 @@ public class SeatFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        payment = new javax.swing.JDialog();
+        pbPaymetnBackGound = new javax.swing.JPanel(){
+            Image img = new ImageIcon(getClass().getResource("/image/background/payment.png")).getImage();
+            public void paintComponent(Graphics g) {//그리는 함수
+                g.drawImage(img, 0, 0, img.getWidth(null), img.getHeight(null), null);//background를 그려줌
+            }
+        };
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         pnBackground = new javax.swing.JPanel(){
             Image img = new ImageIcon(getClass().getResource("/image/background/seat.png")).getImage();
             public void paintComponent(Graphics g) {//그리는 함수
@@ -150,8 +165,40 @@ public class SeatFrame extends javax.swing.JFrame {
                 g.drawImage(img, 0, 0, 180, 270, null);//background를 그려줌
             }
         };
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel7 = new javax.swing.JLabel();
+
+        payment.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        payment.setModal(true);
+        payment.setResizable(false);
+        payment.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pbPaymetnBackGound.setPreferredSize(new java.awt.Dimension(600, 400));
+        pbPaymetnBackGound.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "은행선택", "국민은행", "우리은행", "기업은행", "신한은행", "농협은행", "하나은행", "카카오뱅크" }));
+        pbPaymetnBackGound.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 150, -1));
+        pbPaymetnBackGound.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 260, 110, -1));
+        pbPaymetnBackGound.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 160, 200, -1));
+
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setText("YYYY");
+        pbPaymetnBackGound.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, -1));
+
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("MM");
+        pbPaymetnBackGound.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 50, -1));
+
+        jButton1.setBackground(new java.awt.Color(40, 71, 192));
+        jButton1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("결제");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        pbPaymetnBackGound.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 348, 150, 40));
+
+        payment.getContentPane().add(pbPaymetnBackGound, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InhaCinema");
@@ -197,6 +244,11 @@ public class SeatFrame extends javax.swing.JFrame {
         jButton5.setText("결제");
         jButton5.setBorder(null);
         jButton5.setFocusable(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         pnBackground.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 300, 45));
 
         btn_select.setBackground(new java.awt.Color(67, 67, 67));
@@ -221,21 +273,27 @@ public class SeatFrame extends javax.swing.JFrame {
             }
         });
         pnBackground.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 20, 90, 80));
+
+        javax.swing.GroupLayout pnPosterLayout = new javax.swing.GroupLayout(pnPoster);
+        pnPoster.setLayout(pnPosterLayout);
+        pnPosterLayout.setHorizontalGroup(
+            pnPosterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+        pnPosterLayout.setVerticalGroup(
+            pnPosterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 270, Short.MAX_VALUE)
+        );
+
         pnBackground.add(pnPoster, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 180, 270));
 
-        jToggleButton1.setText("jToggleButton1");
-        pnBackground.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 530, -1, -1));
-
         getContentPane().add(pnBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background/seat.png"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
-        // TODO add your handling code here:
+        // 뒤로가기 버튼
         int userChoice = JOptionPane.showConfirmDialog(
                 null,
                 "예매 정보가 사라집니다. 계속하시겠습니까?",
@@ -243,11 +301,41 @@ public class SeatFrame extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION
         );
         if (userChoice != JOptionPane.YES_OPTION) return;
-        
+ 
         ReserveFrame frame = new ReserveFrame(user, movie);
         frame.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // 결제 버튼
+        if (personnel != choiceCount) {
+            JOptionPane.showMessageDialog(null, "선택하신 좌석의 수가 올바르지 않습니다.");
+            return;
+        } else {
+            //다이얼로그를 크기 정의
+            payment.setSize(600,445);
+            //다이얼로그를 화면 중앙에 위치시키기
+            Dimension parentSize = this.getSize();
+            Point parentLocation = this.getLocation();
+            payment.setLocation(
+                parentLocation.x + (parentSize.width - payment.getWidth()) / 2,
+                parentLocation.y + (parentSize.height - payment.getHeight()) / 2
+            );
+            payment.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // 찐 결제 버튼
+        for(int seatCode : selectedSeat){   // 예매
+            reserveInsert(seatCode);
+        }
+        payment.setVisible(false);
+        MainFrame frame = new MainFrame(user);
+        frame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // 이미 예매 된 좌석번호 추출
     public void getSeat() {
@@ -270,9 +358,25 @@ public class SeatFrame extends javax.swing.JFrame {
         }
     }
     
-    /**
-     * @param args the command line arguments
-     */
+    // 예매 테이블에 예매 정보 INSERT
+    public void reserveInsert(int seatCode) {
+        DB db = new DB();
+        String sql = "INSERT INTO reservation (screeningcode, id, date, canceled, seatcode) VALUE (?, ?, NOW(), 0, ?);";
+        
+        try {
+            db.open();
+            db.stmt = db.connect.prepareStatement(sql);
+            db.stmt.setInt(1, screening.getScreeningCode());
+            db.stmt.setString(2, user.getId());
+            db.stmt.setInt(3, seatCode);
+            db.stmt.executeUpdate();
+        } catch(SQLException e) {
+            System.out.println("reserveInsert SQLException : " + e.getMessage());
+        } finally {
+            db.close();
+        }
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -310,15 +414,21 @@ public class SeatFrame extends javax.swing.JFrame {
     private javax.swing.JButton btn_back;
     private javax.swing.JButton btn_select;
     private javax.swing.JButton btn_select1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblAdult;
     private javax.swing.JLabel lblChild;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblOp;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblTime;
+    private javax.swing.JDialog payment;
+    private javax.swing.JPanel pbPaymetnBackGound;
     private javax.swing.JPanel pnBackground;
     private javax.swing.JPanel pnPoster;
     // End of variables declaration//GEN-END:variables
