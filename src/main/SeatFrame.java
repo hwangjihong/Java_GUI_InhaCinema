@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
@@ -22,7 +24,7 @@ public class SeatFrame extends javax.swing.JFrame {
     private int button_x, button_y;
     private ArrayList<Integer> reservedSeat = new ArrayList<>();
     private ArrayList<Integer> selectedSeat = new ArrayList<>();
-    private int choiceCount, personnel = 0;
+    private int choiceCount = 0, personnel = 0;
     
     public SeatFrame() {
         initComponents();
@@ -67,40 +69,30 @@ public class SeatFrame extends javax.swing.JFrame {
                     jb[i][j].setEnabled(false);
                     jb[i][j].setIcon(new ImageIcon(getClass().getResource("/image/button/seat3.png")));
                 } else{ //버튼 마우스 이벤트
-                    jb[i][j].addMouseListener(new MouseAdapter() {
-                    // 마우스 눌렀을 때 이벤트
-                        public void mouseClicked(MouseEvent e) {
-                            JToggleButton button = (JToggleButton) e.getSource();
-                            if (personnel == choiceCount) {
-                                // 예매인원의 좌석을 전부 선택했을때
-                                System.out.println(personnel);
-                                System.out.println(choiceCount);
-                                if (selectedSeat.contains(seatNum)) {
-                                    // 눌려있는 버튼을 또 눌렀을때
-                                    choiceCount -= 1;
-                                    selectedSeat.remove((Integer) (seatNum));
-                                    button.setBackground(null);
-                                } else {
-                                    // 눌려있지 않는 버튼을 눌렀을때
-                                    button.setSelected(false);
-                                    JOptionPane.showMessageDialog(null, "모두 선택하셨습니다.");
-                                }
-                            } else {
-                                // 아직 예매인원의 좌석을 전부 선택하지 않았을 때
-                                if (selectedSeat.contains(seatNum)) {     // 이미 눌려있는 버튼을 눌렸을때
-                                    choiceCount -= 1;
-                                    selectedSeat.remove((Integer) (seatNum));
-                                    button.setBackground(null);
-                                } else {                                    // 눌려있지 않는 버튼을 눌렀을때
-                                    choiceCount += 1;
-                                    System.out.println(choiceCount);
-                                    selectedSeat.add(seatNum);
-                                    button.setBackground(new Color(40, 71, 192));
-                                }
+                    jb[i][j].addActionListener(new ActionListener() { 
+                        // 버튼이 눌리거나 풀렸을 때
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                        JToggleButton button = (JToggleButton) e.getSource();
+                        
+                        if(selectedSeat.contains(seatNum)) { // 이미 누른 버튼 다시 눌렀을 때                                        
+                            choiceCount -= 1;
+                            selectedSeat.remove((Integer) (seatNum));
+                            button.setBackground(null);
+                        } else if(choiceCount == personnel) { // 예매인원의 좌석을 전부 선택했을 때
+                            button.setSelected(false);
+                            JOptionPane.showMessageDialog(null, "모두 선택하셨습니다.");
+                        } else { // 아직 예매인원의 좌석을 전부 선택하지 않았을 때
+                            choiceCount += 1;
+                            selectedSeat.add(seatNum);
+                            button.setBackground(new Color(40, 71, 192));
                             }
                         }
-                        
+                    });
+                    jb[i][j].addMouseListener(new MouseAdapter() {
+                    // 마우스 눌렀을 때 이벤트    
                         // 커서가 올라갔을때
+                        @Override
                         public void mouseEntered(MouseEvent e) {
                             JToggleButton button = (JToggleButton) e.getSource();
                             if(button.isSelected()==false && personnel!=choiceCount)    // 해당 버튼이 눌려있지 않으면서
@@ -110,15 +102,14 @@ public class SeatFrame extends javax.swing.JFrame {
                         }
 
                         // 커서가 벗어났을때
+                        @Override
                         public void mouseExited(MouseEvent e) {
                             JToggleButton button = (JToggleButton) e.getSource();
                             if(button.isSelected()==false)
                             {
                                 button.setBackground(null);
                             }
-
-                        }
-                        
+                        }         
                     });
                 }
                 pnBackground.add(jb[i][j], new org.netbeans.lib.awtextra.AbsoluteConstraints(button_x , button_y, 40, 40));
