@@ -461,12 +461,14 @@ public class Mypage extends javax.swing.JFrame {
 
     private void getReservationInfo(){
         DB db = new DB();
-        String sql = "SELECT DISTINCT r.date AS ReservationDate, m.title AS MovieTitle, s.screeningDate AS ScreeningDate, s.screeningTime AS ScreeningTime "+
-                     "FROM inhaCinema.reservation r "+
-                     "JOIN inhaCinema.screening s ON r.ScreeningCode = s.screeningCode "+
-                     "JOIN inhaCinema.movie m ON s.movieCode = m.code "+
-                     "WHERE r.Id = ? AND r.canceled = 0";     // Screening, Movie, Reservation 3개의 테이블을 JOIN
-        try {                                                  // 예매 취소가 안되어 있는 예매 정보 추출
+        String sql = "SELECT r.groupID, MIN(r.date) AS ReservationDate, m.title AS MovieTitle, " +
+                          "s.screeningDate AS ScreeningDate, s.screeningTime AS ScreeningTime " +
+                          "FROM inhaCinema.reservation r " +
+                          "JOIN inhaCinema.screening s ON r.ScreeningCode = s.screeningCode " +
+                          "JOIN inhaCinema.movie m ON s.movieCode = m.code " +
+                          "WHERE r.Id = ? AND r.canceled = 0 " +
+                          "GROUP BY r.groupID, m.title, s.screeningDate, s.screeningTime";     // Screening, Movie, Reservation 3개의 테이블을 JOIN
+        try {                                                                                  // 예매 취소가 안되어 있는 예매 정보 추출
             db.open();
             db.stmt = db.connect.prepareStatement(sql);
             db.stmt.setString(1, user.getId());
@@ -491,12 +493,14 @@ public class Mypage extends javax.swing.JFrame {
     
     private void getCancelInfo(){
         DB db = new DB();
-        String sql = "SELECT DISTINCT r.groupID, r.date AS ReservationDate, m.title AS MovieTitle, r.cancelTime AS CacleTime "+
-                     "FROM inhaCinema.reservation r "+
-                     "JOIN inhaCinema.screening s ON r.ScreeningCode = s.screeningCode "+
-                     "JOIN inhaCinema.movie m ON s.movieCode = m.code "+
-                     "WHERE r.Id = ? AND r.canceled = 1";     // Screening, Movie, Reservation 3개의 테이블을 JOIN
-        try {                                                  // 예매 취소가 안되어 있는 예매 정보 추출
+        String sql = "SELECT r.groupID, MIN(r.date) AS ReservationDate, m.title AS MovieTitle, " +
+                          "s.screeningDate AS ScreeningDate, s.screeningTime AS ScreeningTime, r.cancelTime AS CancelTime " +
+                          "FROM inhaCinema.reservation r " +
+                          "JOIN inhaCinema.screening s ON r.ScreeningCode = s.screeningCode " +
+                          "JOIN inhaCinema.movie m ON s.movieCode = m.code " +
+                          "WHERE r.Id = ? AND r.canceled = 1 " +
+                          "GROUP BY r.groupID, m.title, s.screeningDate, s.screeningTime, r.cancelTime";     // Screening, Movie, Reservation 3개의 테이블을 JOIN
+        try {                                                                                  // 예매 취소가 되어 있는 예매 정보 추출
             db.open();
             db.stmt = db.connect.prepareStatement(sql);
             db.stmt.setString(1, user.getId());
@@ -507,9 +511,9 @@ public class Mypage extends javax.swing.JFrame {
                 
                 String reservationDate = db.rs.getString("ReservationDate"); // 예매 날짜
                 String movieTitle = db.rs.getString("MovieTitle");           // 영화 제목
-                String cacleTime = db.rs.getString("CacleTime");           // 취소 날짜, 시각
+                String cancelTime = db.rs.getString("CancelTime");           // 취소 날짜, 시각
                 
-                rowData.addRow(new Object[]{reservationDate, movieTitle, cacleTime});
+                rowData.addRow(new Object[]{reservationDate, movieTitle, cancelTime});
             }
         } catch(SQLException e) {
             System.out.println("getSeat SQLException : " + e.getMessage());
