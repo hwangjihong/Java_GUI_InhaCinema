@@ -55,6 +55,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -66,7 +67,7 @@ public class RegisterFrame extends javax.swing.JFrame {
         txtNickName.setText("닉네임");
         txtNickName.setToolTipText("");
         txtNickName.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        txtNickName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNickName.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtNickName.setFocusable(false);
         txtNickName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {

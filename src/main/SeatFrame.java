@@ -10,10 +10,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.swing.Icon;
+import java.util.UUID;
 import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
-import javax.swing.plaf.metal.MetalButtonUI;
 public class SeatFrame extends javax.swing.JFrame {
     
     private User user = null;
@@ -46,6 +45,7 @@ public class SeatFrame extends javax.swing.JFrame {
         
         // 예매 인원 수
         personnel = Integer.parseInt(screening.getChildCount()) + Integer.parseInt(screening.getAdultCount());
+        System.out.println(personnel);
         
         button_x = 620;
         button_y = 175;
@@ -73,6 +73,8 @@ public class SeatFrame extends javax.swing.JFrame {
                             JToggleButton button = (JToggleButton) e.getSource();
                             if (personnel == choiceCount) {
                                 // 예매인원의 좌석을 전부 선택했을때
+                                System.out.println(personnel);
+                                System.out.println(choiceCount);
                                 if (selectedSeat.contains(seatNum)) {
                                     // 눌려있는 버튼을 또 눌렀을때
                                     choiceCount -= 1;
@@ -91,6 +93,7 @@ public class SeatFrame extends javax.swing.JFrame {
                                     button.setBackground(null);
                                 } else {                                    // 눌려있지 않는 버튼을 눌렀을때
                                     choiceCount += 1;
+                                    System.out.println(choiceCount);
                                     selectedSeat.add(seatNum);
                                     button.setBackground(new Color(40, 71, 192));
                                 }
@@ -203,6 +206,7 @@ public class SeatFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -328,8 +332,10 @@ public class SeatFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // 찐 결제 버튼
+        String uuid = UUID.randomUUID().toString(); // groupID 설정
+        
         for(int seatCode : selectedSeat){   // 예매
-            reserveInsert(seatCode);
+            reserveInsert(seatCode,uuid);
         }
         payment.setVisible(false);
         MainFrame frame = new MainFrame(user);
@@ -359,9 +365,9 @@ public class SeatFrame extends javax.swing.JFrame {
     }
     
     // 예매 테이블에 예매 정보 INSERT
-    public void reserveInsert(int seatCode) {
+    public void reserveInsert(int seatCode, String uuid) {
         DB db = new DB();
-        String sql = "INSERT INTO reservation (screeningcode, id, date, canceled, seatcode) VALUE (?, ?, NOW(), 0, ?);";
+        String sql = "INSERT INTO reservation (screeningcode, id, date, canceled, seatcode, groupId) VALUE (?, ?, NOW(), 0, ?, ?);";
         
         try {
             db.open();
@@ -369,6 +375,7 @@ public class SeatFrame extends javax.swing.JFrame {
             db.stmt.setInt(1, screening.getScreeningCode());
             db.stmt.setString(2, user.getId());
             db.stmt.setInt(3, seatCode);
+            db.stmt.setString(4, uuid);
             db.stmt.executeUpdate();
         } catch(SQLException e) {
             System.out.println("reserveInsert SQLException : " + e.getMessage());

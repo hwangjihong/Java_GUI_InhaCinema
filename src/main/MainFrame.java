@@ -39,7 +39,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnMypage = new javax.swing.JButton();
         sldImage = new swing.ImageSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,31 +50,34 @@ public class MainFrame extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("한컴 말랑말랑 Regular", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("반갑습니다");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1200, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 660, -1));
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMypage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/mypage1.png"))); // NOI18N
+        btnMypage.setContentAreaFilled(false);
+        btnMypage.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/button/mypage2.png"))); // NOI18N
+        btnMypage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMypageActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 590, 50, -1));
+        getContentPane().add(btnMypage, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, 80, 80));
 
         sldImage.setOpaque(false);
         getContentPane().add(sldImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1290, 697));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        sldImage.getSb().setValue(sldImage.getSb().getValue() + 30);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnMypageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMypageActionPerformed
+        // 마이페이지 버튼 클릭 이벤트
+        Mypage frame = new Mypage(user);
+        frame.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnMypageActionPerformed
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -108,7 +111,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnMypage;
     private javax.swing.JLabel jLabel1;
     private swing.ImageSlider sldImage;
     // End of variables declaration//GEN-END:variables

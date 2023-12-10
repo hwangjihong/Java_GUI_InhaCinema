@@ -44,6 +44,7 @@ public class LoginFrame extends javax.swing.JFrame {
         setTitle("InhaCinema");
         setLocation(new java.awt.Point(125, 30));
         setLocationByPlatform(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnBackground.setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -157,6 +158,9 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
         txtCaptchaAnswer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCaptchaAnswerKeyPressed(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCaptchaAnswerKeyTyped(evt);
             }
@@ -189,10 +193,6 @@ public class LoginFrame extends javax.swing.JFrame {
     private void txtPWKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPWKeyTyped
         // txtPW 텍스트 필드에 키가 입력될 시
         if(txtPW.getText().length() > 16) evt.consume();
-        if(evt.getKeyCode() == KeyEvent.VK_TAB) {
-            txtCaptchaAnswer.setFocusable(true);
-            System.out.println("txtPW");
-        }
     }//GEN-LAST:event_txtPWKeyTyped
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -319,6 +319,13 @@ public class LoginFrame extends javax.swing.JFrame {
         // txtCaptchaAnswer 텍스트 필드에 키가 입력될 시
         if(txtCaptchaAnswer.getText().length() > 4) evt.consume();
     }//GEN-LAST:event_txtCaptchaAnswerKeyTyped
+
+    private void txtCaptchaAnswerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCaptchaAnswerKeyPressed
+        // txtCaptchaAnswer 텍스트 필드에서 엔터키를 누르면 로그인버튼 클릭
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            btnLogin.doClick();
+        }
+    }//GEN-LAST:event_txtCaptchaAnswerKeyPressed
 
     /**
      * @param args the command line arguments
